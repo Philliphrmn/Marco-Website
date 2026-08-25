@@ -19,7 +19,7 @@ noch auf lizenzfreie Unsplash-Platzhalter.
 | Status | Key | Ziel-Dateiname | Einsatzort | Format | Mindestbreite |
 |---|---|---|---|---|---|
 | Platzhalter | `hero` | `hero-marco-herrmann.jpg` | Startseite, Titelbild | 3:2 | 1920 px |
-| Platzhalter | `portrait` | `portrait-marco-herrmann.jpg` | Startseite, „Über mich" | 4:5 | 900 px |
+| ✅ | `portrait` | `portrait-marco-herrmann.jpg` | Startseite, „Über mich" | 4:5 | - |
 | ✅ | `tile_werkstatt` | `werkstatt-showroom.jpg` | Kachel „Kfz-Service" | 4:3 | - |
 | ✅ | `tile_automobile` | `tile-automobile.jpg` | Kachel „Automobile" | 4:3 | - |
 | ✅ | `tile_immobilien` | `tile-immobilien.jpg` | Kachel „Immobilien" | 4:3 | - |
@@ -61,9 +61,13 @@ nachher) einsetzen, sonst wirkt der Vergleich nicht stimmig.
 | ✅ | `immo_betriebsgebaeude` | „Betriebsgebäude, Oberfranken" | 4:3 |
 | ✅ | `immo_gewerbehalle` | „Gewerbehalle, Oberfranken" | 4:3 |
 | ✅ | `immo_hohensaas` | „Ehemalige Autovermietung, Oberfranken" | 4:3 |
-| ✅ | `immo_porto` | „Ferienhaus, Porto" | 4:3 |
-| Platzhalter | `immo_schleizer` | „Umgebaute Tankstelle, Oberfranken" | 4:3 |
+| Stockfoto (bewusst) | `immo_porto` | „Ferienhaus, Porto" | 4:3 |
+| ✅ | `immo_schleizer` | „Umgebaute Tankstelle, Oberfranken" | 4:3 |
 | Platzhalter | `immo_wien` | „Altbauwohnung, Wien" | 4:3 |
+
+Hinweis zu `immo_porto`: Auf Wunsch bewusst ein generisches Porto-Stockfoto
+statt eines eigenen Fotos - kein Handlungsbedarf, außer ein eigenes Foto vom
+Ferienhaus soll später eingesetzt werden.
 
 ## Facility
 
