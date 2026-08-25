@@ -180,6 +180,12 @@ export const images = {
 
   // --- Immobilien ---
 
+  // Echtes Foto: Panorama der Gewerbehalle (Cover-Bild)
+  immo_cover: {
+    src: '/images/immobilien-cover.jpg',
+    width: 2362,
+    height: 672,
+  },
   // Echtes Foto: Betriebsgebäude, silber verkleidet
   immo_betriebsgebaeude: {
     src: '/images/immobilien-betriebsgebaeude.jpg',

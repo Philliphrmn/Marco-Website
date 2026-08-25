@@ -16,6 +16,19 @@ const t = content.immobilien;
 <Layout lang={lang} slug="immobilien" title={t.meta.title} description={t.meta.description}>
   <PageHeader heading={t.intro.heading} text={t.intro.text} />
 
+  <section class="mx-auto max-w-6xl px-5 sm:px-8">
+    <div class="fade-in-up aspect-[7/2] overflow-hidden rounded-sm bg-base-800">
+      <img
+        src={images.immo_cover.src}
+        alt={t.intro.coverAlt}
+        width={images.immo_cover.width}
+        height={images.immo_cover.height}
+        loading="lazy"
+        class="h-full w-full object-cover"
+      />
+    </div>
+  </section>
+
   <section class="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
     <div class="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
       {
