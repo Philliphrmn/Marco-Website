@@ -19,11 +19,11 @@ type ImageEntry = {
 };
 
 export const images = {
-  // Ziel: public/images/hero-marco-herrmann.jpg · Seitenverhältnis 3:2 · min. 1920px breit
+  // Echtes Foto: Mercedes-AMG GT Black Series
   hero: {
-    src: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920&h=1280&auto=format&fit=crop',
-    width: 1920,
-    height: 1280,
+    src: '/images/hero-marco-herrmann.jpg',
+    width: 736,
+    height: 1308,
   },
 
   // Echtes Foto: Portrait von Marco Herrmann
