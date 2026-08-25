@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "siteName": "Marco Herrmann",
+    "homeTitle": "Marco Herrmann — Vehicle Workshop, Automobiles, Real Estate, Facility Management",
+    "homeDescription": "Personal site of Marco Herrmann: vehicle workshop, automobiles, real estate and facility management in Upper Franconia, Germany."
+  },
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "languageSwitch": "Switch language"
+  },
+  "nav": {
+    "links": [
+      { "key": "werkstatt", "label": "Workshop" },
+      { "key": "automobile", "label": "Automobiles" },
+      { "key": "immobilien", "label": "Real Estate" },
+      { "key": "facility", "label": "Facility Management" }
+    ]
+  },
+  "footer": {
+    "contactHeading": "Contact",
+    "phoneLabel": "Call",
+    "whatsappLabel": "WhatsApp",
+    "emailLabel": "Email",
+    "linkedinLabel": "LinkedIn",
+    "placeholderNote": "not yet available",
+    "impressum": "Legal Notice",
+    "datenschutz": "Privacy Policy"
+  },
+  "home": {
+    "hero": {
+      "name": "MARCO HERRMANN",
+      "tagline": "Vehicle workshop, automobiles, real estate and facility management — Upper Franconia.",
+      "imageAlt": "Moody photograph of a car at dusk"
+    },
+    "about": {
+      "heading": "About",
+      "paragraphs": [
+        "Born in 1977, trained as a master automotive technician. At 21, I took over my family's business — and over the following 25 years built it into a regional mobility and transport company, which I sold in 2023. That period shaped my entrepreneurial thinking more than anything before it.",
+        "What has stayed with me is what has always interested me: things with substance. Vehicles, buildings, businesses. Today I work across four fields — a vehicle workshop focused on Mercedes-Benz and sports cars, the restoration and trade of collector cars, the renovation of my own properties in Germany, Austria and Portugal, and a facility management business.",
+        "If any of this is of interest — feel free to get in touch."
+      ],
+      "imageAlt": "Portrait of Marco Herrmann"
+    },
+    "tiles": {
+      "heading": "Areas of Work",
+      "items": [
+        {
+          "key": "werkstatt",
+          "title": "Vehicle Service",
+          "text": "Maintenance, repair and detailing with a focus on Mercedes-Benz. Towing service around the clock.",
+          "href": "werkstatt",
+          "imageAlt": "Vehicles inside the workshop"
+        },
+        {
+          "key": "automobile",
+          "title": "Automobiles",
+          "text": "Restored classics and select collector cars — a personal passion of mine.",
+          "href": "automobile",
+          "imageAlt": "Detail shot of a collector car"
+        },
+        {
+          "key": "immobilien",
+          "title": "Real Estate",
+          "text": "Six properties across Germany, Austria and Portugal, renovated and built.",
+          "href": "immobilien",
+          "imageAlt": "Facade of a renovated townhouse"
+        },
+        {
+          "key": "facility",
+          "title": "Facility Management",
+          "text": "Winter service, grounds maintenance and cleaning for commercial and residential properties.",
+          "href": "facility",
+          "imageAlt": "Grounds maintenance in action"
+        }
+      ]
+    }
+  }
+}

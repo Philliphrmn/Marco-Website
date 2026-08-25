@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "siteName": "Marco Herrmann",
+    "homeTitle": "Marco Herrmann — Kfz-Betrieb, Automobile, Immobilien, Facility Management",
+    "homeDescription": "Persönliche Seite von Marco Herrmann: Kfz-Betrieb, Automobile, Immobilien und Facility Management in Oberfranken."
+  },
+  "a11y": {
+    "skipToContent": "Zum Inhalt springen",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "languageSwitch": "Sprache wechseln"
+  },
+  "nav": {
+    "links": [
+      { "key": "werkstatt", "label": "Werkstatt" },
+      { "key": "automobile", "label": "Automobile" },
+      { "key": "immobilien", "label": "Immobilien" },
+      { "key": "facility", "label": "Facility Management" }
+    ]
+  },
+  "footer": {
+    "contactHeading": "Kontakt",
+    "phoneLabel": "Anrufen",
+    "whatsappLabel": "WhatsApp",
+    "emailLabel": "E-Mail",
+    "linkedinLabel": "LinkedIn",
+    "placeholderNote": "noch nicht hinterlegt",
+    "impressum": "Impressum",
+    "datenschutz": "Datenschutz"
+  },
+  "home": {
+    "hero": {
+      "name": "MARCO HERRMANN",
+      "tagline": "Kfz-Betrieb, Automobile, Immobilien und Facility Management — Oberfranken.",
+      "imageAlt": "Dunkles Automobilfoto bei Dämmerung"
+    },
+    "about": {
+      "heading": "Über mich",
+      "paragraphs": [
+        "Jahrgang 1977, Kfz-Meister. Mit 21 Jahren habe ich den elterlichen Betrieb übernommen — und daraus über 25 Jahre ein regionales Mobilitäts- und Transportunternehmen aufgebaut, das ich 2023 veräußert habe. Diese Zeit hat mich unternehmerisch mehr geprägt als alles davor.",
+        "Geblieben ist das, was mich seit jeher interessiert: Dinge mit Substanz. Fahrzeuge, Gebäude, Betriebe. Heute arbeite ich in vier Feldern — einem Kfz-Betrieb mit Schwerpunkt Mercedes-Benz und Sportwagen, der Restaurierung und dem Handel mit Sammlerfahrzeugen, der Sanierung eigener Immobilien in Deutschland, Österreich und Portugal sowie einem Facility-Management-Betrieb.",
+        "Wenn Sie etwas davon interessiert — melden Sie sich einfach."
+      ],
+      "imageAlt": "Portrait von Marco Herrmann"
+    },
+    "tiles": {
+      "heading": "Tätigkeitsfelder",
+      "items": [
+        {
+          "key": "werkstatt",
+          "title": "Kfz-Service",
+          "text": "Wartung, Reparatur und Pflege mit Schwerpunkt Mercedes-Benz. Abschleppdienst rund um die Uhr.",
+          "href": "werkstatt",
+          "imageAlt": "Fahrzeuge in der Kfz-Werkstatt"
+        },
+        {
+          "key": "automobile",
+          "title": "Automobile",
+          "text": "Restaurierte Klassiker und ausgesuchte Sammlerfahrzeuge — mein persönliches Faible.",
+          "href": "automobile",
+          "imageAlt": "Detailaufnahme eines Sammlerfahrzeugs"
+        },
+        {
+          "key": "immobilien",
+          "title": "Immobilien",
+          "text": "Sechs Objekte in Deutschland, Österreich und Portugal, saniert und gebaut.",
+          "href": "immobilien",
+          "imageAlt": "Fassade eines sanierten Stadthauses"
+        },
+        {
+          "key": "facility",
+          "title": "Facility Management",
+          "text": "Winterdienst, Grünflächen und Reinigung für Gewerbe und Wohnanlagen.",
+          "href": "facility",
+          "imageAlt": "Grünflächenpflege im Einsatz"
+        }
+      ]
+    }
+  }
+}

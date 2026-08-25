@@ -1,0 +1,132 @@
+---
+import { Menu, X } from '@lucide/astro';
+import { getContent, path, type Lang } from '../i18n/utils';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+
+interface Props {
+  lang: Lang;
+  slug: string;
+}
+
+const { lang, slug } = Astro.props;
+const content = getContent(lang);
+const home = path(lang);
+---
+
+<header class="sticky top-0 z-40 border-b border-base-800 bg-base-950/95 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-5 sm:px-8">
+    <a
+      href={home}
+      class="font-serif text-sm uppercase tracking-[0.28em] text-ink transition-colors hover:text-accent sm:text-base"
+    >
+      {content.meta.siteName}
+    </a>
+
+    <nav aria-label="Hauptnavigation" class="hidden items-center gap-8 md:flex">
+      {
+        content.nav.links.map((link) => (
+          <a
+            href={path(lang, link.key)}
+            aria-current={slug === link.key ? 'page' : undefined}
+            class={`text-sm tracking-wide transition-colors ${
+              slug === link.key ? 'text-accent' : 'text-ink-muted hover:text-ink'
+            }`}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <LanguageSwitcher lang={lang} slug={slug} label={content.a11y.languageSwitch} />
+    </nav>
+
+    <div class="flex items-center gap-4 md:hidden">
+      <LanguageSwitcher lang={lang} slug={slug} label={content.a11y.languageSwitch} />
+      <button
+        id="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        class="inline-flex h-10 w-10 items-center justify-center text-ink"
+      >
+        <Menu id="menu-icon-open" class="h-6 w-6" aria-hidden="true" />
+        <X id="menu-icon-close" class="hidden h-6 w-6" aria-hidden="true" />
+        <span class="sr-only">{content.a11y.openMenu}</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!--
+  Bewusst außerhalb von <header>: der Header hat backdrop-blur (CSS filter),
+  was ihn zum Containing Block für position:fixed-Kinder machen würde -
+  das Overlay würde dann nur auf Header-Höhe begrenzt statt den ganzen
+  Bildschirm zu füllen.
+-->
+<div
+  id="mobile-menu"
+  role="dialog"
+  aria-modal="true"
+  aria-label={content.a11y.openMenu}
+  class="fixed inset-0 z-50 hidden bg-base-950"
+>
+  <div class="flex items-center justify-between px-5 py-5 sm:px-8">
+    <a href={home} class="font-serif text-sm uppercase tracking-[0.28em] text-ink sm:text-base">
+      {content.meta.siteName}
+    </a>
+    <button
+      id="menu-close"
+      type="button"
+      class="inline-flex h-10 w-10 items-center justify-center text-ink"
+    >
+      <X class="h-6 w-6" aria-hidden="true" />
+      <span class="sr-only">{content.a11y.closeMenu}</span>
+    </button>
+  </div>
+  <nav aria-label="Hauptnavigation" class="mt-10 flex flex-col items-center gap-8 px-5">
+    {
+      content.nav.links.map((link) => (
+        <a
+          href={path(lang, link.key)}
+          aria-current={slug === link.key ? 'page' : undefined}
+          class={`font-serif text-2xl transition-colors ${
+            slug === link.key ? 'text-accent' : 'text-ink hover:text-accent'
+          }`}
+        >
+          {link.label}
+        </a>
+      ))
+    }
+  </nav>
+</div>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const closeBtn = document.getElementById('menu-close');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  function openMenu() {
+    menu?.classList.remove('hidden');
+    iconOpen?.classList.add('hidden');
+    iconClose?.classList.remove('hidden');
+    toggle?.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    closeBtn?.focus();
+  }
+
+  function closeMenu() {
+    menu?.classList.add('hidden');
+    iconOpen?.classList.remove('hidden');
+    iconClose?.classList.add('hidden');
+    toggle?.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    toggle?.focus();
+  }
+
+  toggle?.addEventListener('click', openMenu);
+  closeBtn?.addEventListener('click', closeMenu);
+  menu?.addEventListener('keydown', (event) => {
+    if (event instanceof KeyboardEvent && event.key === 'Escape') closeMenu();
+  });
+</script>

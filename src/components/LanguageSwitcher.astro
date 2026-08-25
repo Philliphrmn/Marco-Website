@@ -1,0 +1,30 @@
+---
+import { languages, path, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  slug: string;
+  label: string;
+}
+
+const { lang, slug, label } = Astro.props;
+---
+
+<nav aria-label={label} class="flex items-center text-xs tracking-[0.15em]">
+  {
+    languages.map((l, i) => (
+      <>
+        {i > 0 && <span class="px-2 text-base-600" aria-hidden="true">|</span>}
+        <a
+          href={path(l, slug)}
+          aria-current={l === lang ? 'page' : undefined}
+          class={`inline-block px-1 py-2 uppercase transition-colors ${
+            l === lang ? 'text-accent' : 'text-ink-muted hover:text-ink'
+          }`}
+        >
+          {l}
+        </a>
+      </>
+    ))
+  }
+</nav>

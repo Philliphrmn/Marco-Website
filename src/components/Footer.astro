@@ -1,0 +1,64 @@
+---
+import { Mail, MessageCircle, Phone } from '@lucide/astro';
+import { getContent, path, type Lang } from '../i18n/utils';
+import { mailHref, siteConfig, telHref, whatsappHref } from '../content/site-config';
+import ContactButton from './ContactButton.astro';
+import LinkedinIcon from './icons/LinkedinIcon.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const content = getContent(lang);
+const f = content.footer;
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-base-800 bg-base-900">
+  <div class="mx-auto max-w-6xl px-5 py-14 sm:px-8">
+    <h2 class="sr-only">{f.contactHeading}</h2>
+    <div class="flex flex-wrap gap-3">
+      <ContactButton
+        icon={Phone}
+        label={f.phoneLabel}
+        value={siteConfig.telefon}
+        href={telHref(siteConfig.telefon)}
+        placeholderNote={f.placeholderNote}
+      />
+      <ContactButton
+        icon={MessageCircle}
+        label={f.whatsappLabel}
+        value={siteConfig.whatsapp}
+        href={whatsappHref(siteConfig.whatsapp)}
+        placeholderNote={f.placeholderNote}
+        external
+      />
+      <ContactButton
+        icon={Mail}
+        label={f.emailLabel}
+        value={siteConfig.email}
+        href={mailHref(siteConfig.email)}
+        placeholderNote={f.placeholderNote}
+      />
+      <ContactButton
+        icon={LinkedinIcon}
+        label={f.linkedinLabel}
+        value={siteConfig.linkedinUrl}
+        href={siteConfig.linkedinUrl}
+        placeholderNote={f.placeholderNote}
+        external
+      />
+    </div>
+
+    <div
+      class="mt-12 flex flex-col gap-4 border-t border-base-800 pt-8 text-xs text-ink-muted sm:flex-row sm:items-center sm:justify-between"
+    >
+      <p>&copy; {year} {content.meta.siteName}</p>
+      <nav aria-label="Rechtliches" class="flex gap-6">
+        <a href={path(lang, 'impressum')} class="transition-colors hover:text-ink">{f.impressum}</a>
+        <a href={path(lang, 'datenschutz')} class="transition-colors hover:text-ink">{f.datenschutz}</a>
+      </nav>
+    </div>
+  </div>
+</footer>
