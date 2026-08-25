@@ -1,14 +1,15 @@
 {
   "meta": {
     "siteName": "Marco Herrmann",
-    "homeTitle": "Marco Herrmann — Kfz-Betrieb, Automobile, Immobilien, Facility Management",
+    "homeTitle": "Marco Herrmann - Kfz-Betrieb, Automobile, Immobilien, Facility Management",
     "homeDescription": "Persönliche Seite von Marco Herrmann: Kfz-Betrieb, Automobile, Immobilien und Facility Management in Oberfranken."
   },
   "a11y": {
     "skipToContent": "Zum Inhalt springen",
     "openMenu": "Menü öffnen",
     "closeMenu": "Menü schließen",
-    "languageSwitch": "Sprache wechseln"
+    "languageSwitch": "Sprache wechseln",
+    "closeImage": "Bild schließen"
   },
   "nav": {
     "links": [
@@ -31,15 +32,15 @@
   "home": {
     "hero": {
       "name": "MARCO HERRMANN",
-      "tagline": "Kfz-Betrieb, Automobile, Immobilien und Facility Management — Oberfranken.",
+      "tagline": "Kfz-Betrieb, Automobile, Immobilien und Facility Management - Oberfranken.",
       "imageAlt": "Dunkles Automobilfoto bei Dämmerung"
     },
     "about": {
       "heading": "Über mich",
       "paragraphs": [
-        "Jahrgang 1977, Kfz-Meister. Mit 21 Jahren habe ich den elterlichen Betrieb übernommen — und daraus über 25 Jahre ein regionales Mobilitäts- und Transportunternehmen aufgebaut, das ich 2023 veräußert habe. Diese Zeit hat mich unternehmerisch mehr geprägt als alles davor.",
-        "Geblieben ist das, was mich seit jeher interessiert: Dinge mit Substanz. Fahrzeuge, Gebäude, Betriebe. Heute arbeite ich in vier Feldern — einem Kfz-Betrieb mit Schwerpunkt Mercedes-Benz und Sportwagen, der Restaurierung und dem Handel mit Sammlerfahrzeugen, der Sanierung eigener Immobilien in Deutschland, Österreich und Portugal sowie einem Facility-Management-Betrieb.",
-        "Wenn Sie etwas davon interessiert — melden Sie sich einfach."
+        "Jahrgang 1977, Kfz-Meister. Mit 21 Jahren habe ich den elterlichen Betrieb übernommen - und daraus über 25 Jahre ein regionales Mobilitäts- und Transportunternehmen aufgebaut, das ich 2023 veräußert habe. Diese Zeit hat mich unternehmerisch mehr geprägt als alles davor.",
+        "Geblieben ist das, was mich seit jeher interessiert: Dinge mit Substanz. Fahrzeuge, Gebäude, Betriebe. Heute arbeite ich in vier Feldern - einem Kfz-Betrieb mit Schwerpunkt Mercedes-Benz und Sportwagen, der Restaurierung und dem Handel mit Sammlerfahrzeugen, der Sanierung eigener Immobilien in Deutschland, Österreich und Portugal sowie einem Facility-Management-Betrieb.",
+        "Wenn Sie etwas davon interessiert - melden Sie sich einfach."
       ],
       "imageAlt": "Portrait von Marco Herrmann"
     },
@@ -56,7 +57,7 @@
         {
           "key": "automobile",
           "title": "Automobile",
-          "text": "Restaurierte Klassiker und ausgesuchte Sammlerfahrzeuge — mein persönliches Faible.",
+          "text": "Restaurierte Klassiker und ausgesuchte Sammlerfahrzeuge - mein persönliches Faible.",
           "href": "automobile",
           "imageAlt": "Detailaufnahme eines Sammlerfahrzeugs"
         },
@@ -76,5 +77,261 @@
         }
       ]
     }
+  },
+  "werkstatt": {
+    "meta": {
+      "title": "Werkstatt - Marco Herrmann",
+      "description": "Freier Kfz-Betrieb mit Schwerpunkt Mercedes-Benz und Sportwagen in Zedwitz, Oberfranken. Wartung, Reparatur, Aufbereitung und Abschleppdienst rund um die Uhr."
+    },
+    "intro": {
+      "heading": "Werkstatt",
+      "text": "Freier Kfz-Betrieb mit Schwerpunkt Mercedes-Benz und Sportwagen."
+    },
+    "services": {
+      "heading": "Leistungen",
+      "items": [
+        {
+          "key": "wartung",
+          "title": "Wartung & Inspektion",
+          "text": "Regelmäßige Wartung nach Herstellervorgabe, Inspektion und Diagnose - für Mercedes-Benz ebenso wie für andere Marken."
+        },
+        {
+          "key": "reparatur",
+          "title": "Reparatur & Instandsetzung",
+          "text": "Von der kleinen Reparatur bis zur größeren Instandsetzung - fachgerecht und mit Blick fürs Detail."
+        },
+        {
+          "key": "aufbereitung",
+          "title": "Fahrzeugaufbereitung & Pflege",
+          "text": "Innen- und Außenaufbereitung, damit Ihr Fahrzeug wieder aussieht wie am ersten Tag."
+        },
+        {
+          "key": "abschleppdienst",
+          "title": "Abschleppdienst",
+          "text": "Pannenhilfe und Abschleppdienst, rund um die Uhr erreichbar."
+        }
+      ]
+    },
+    "towing": {
+      "heading": "Abschleppdienst",
+      "text": "24 Stunden erreichbar, 7 Tage die Woche.",
+      "callLabel": "Jetzt anrufen"
+    },
+    "gallery": {
+      "heading": "Einblicke in die Werkstatt",
+      "items": [
+        { "key": "werkstatt_halle", "alt": "Werkstatthalle mit mehreren Fahrzeugen" },
+        { "key": "werkstatt_hebebuehne", "alt": "Fahrzeug auf der Hebebühne" },
+        { "key": "werkstatt_detail", "alt": "Detailaufnahme aus der Werkstatt" }
+      ]
+    },
+    "location": {
+      "heading": "Standort",
+      "addressLines": ["Hofer Str. 45", "95183 Zedwitz"],
+      "imageAlt": "Betriebsgebäude der Werkstatt"
+    }
+  },
+  "automobile": {
+    "meta": {
+      "title": "Automobile - Marco Herrmann",
+      "description": "Restaurierte Klassiker und ausgesuchte Sammlerfahrzeuge, Schwerpunkt Mercedes-AMG."
+    },
+    "intro": {
+      "heading": "Automobile",
+      "text": "Was in der Werkstatt Beruf ist, ist hier Leidenschaft."
+    },
+    "restorations": {
+      "heading": "Restaurierungen",
+      "beforeLabel": "Vorher",
+      "afterLabel": "Nachher",
+      "items": [
+        {
+          "key": "restauration_01",
+          "title": "Mercedes-Benz 190 SL, Baujahr 1962",
+          "text": "Gefunden auf einem Grundstück mit mehreren stillgelegten Fahrzeugen, überwuchert und seit Jahren ungenutzt. Karosserie komplett instandgesetzt, Motor überholt, Verdeck und Interieur neu angefertigt. Heute ein glänzender Roadster in Originalfarbe.",
+          "beforeAlt": "Zwei verwitterte Oldtimer auf einer Wiese vor der Restaurierung",
+          "afterAlt": "Restaurierter blauer Mercedes-Benz Roadster nach der Restaurierung"
+        },
+        {
+          "key": "restauration_02",
+          "title": "Mercedes-Benz W113 Pagode, Baujahr 1968",
+          "text": "Übernommen als Scheunenfund mit stillgelegtem Motor und lückenhafter Historie. Motor und Getriebe komplett revidiert, Chromteile neu verchromt, Verdeck und Interieur erneuert. Heute wieder im Originalzustand unterwegs.",
+          "beforeAlt": "Verrosteter Oldtimer vor einer Lagerhalle vor der Restaurierung",
+          "afterAlt": "Restaurierte weiße Mercedes-Benz Pagode nach der Restaurierung"
+        },
+        {
+          "key": "restauration_03",
+          "title": "Mercedes-Benz SL, Baujahr 1988",
+          "text": "Bei Übernahme bereits bis auf die Karosserie zerlegt, Lack und Unterboden stark angegriffen. Karosserie in Handarbeit instandgesetzt und lackiert, Technik komplett überholt, Innenraum neu ausgestattet. Heute wieder ein vollständiges, fahrbereites Fahrzeug.",
+          "beforeAlt": "Karosserie eines Oldtimers auf einem Bock in der Werkstatt vor der Restaurierung",
+          "afterAlt": "Restaurierter silberner Mercedes-Benz SL nach der Restaurierung"
+        },
+        {
+          "key": "restauration_04",
+          "title": "Porsche 911, Baujahr 1976",
+          "text": "Nach Jahren im Alltagseinsatz mit Verschleiß an Fahrwerk und Technik in die Werkstatt gekommen. Motor komplett revidiert, Fahrwerk auf Originalspezifikation zurückgebaut, Lack aufbereitet. Heute ein zuverlässiger Klassiker mit unverfälschtem Charakter.",
+          "beforeAlt": "Porsche 911 auf der Hebebühne während der Restaurierung",
+          "afterAlt": "Restaurierter Porsche 911 nach der Restaurierung"
+        }
+      ]
+    },
+    "gallery": {
+      "heading": "Schmuckstücke",
+      "items": [
+        { "key": "schmuckstueck_01", "caption": "Mercedes-AMG, Baujahr 2019 - Keramikbremsanlage" },
+        { "key": "schmuckstueck_02", "caption": "Eigene Sammlung - mehrere Klassiker unter einem Dach" },
+        { "key": "schmuckstueck_03", "caption": "Mercedes-AMG SLS - Flügeltüren" },
+        { "key": "schmuckstueck_04", "caption": "Mercedes-AMG, Baujahr 2021 - Handgenähtes Leder" },
+        { "key": "schmuckstueck_05", "caption": "Mercedes-Benz 280 SE, Baujahr 1972 - Kühlerfigur im Detail" },
+        { "key": "schmuckstueck_06", "caption": "Mercedes-Benz W463 G-Klasse, Baujahr 1998 - Geländeuntersetzung" }
+      ]
+    },
+    "outro": "Gelegentlich trenne ich mich von einem Fahrzeug oder suche eines. Bei Interesse: rufen Sie mich einfach an."
+  },
+  "immobilien": {
+    "meta": {
+      "title": "Immobilien - Marco Herrmann",
+      "description": "Sechs Immobilienprojekte in Deutschland, Österreich und Portugal - saniert und gebaut."
+    },
+    "intro": {
+      "heading": "Immobilien",
+      "text": "Seit vielen Jahren kaufe, saniere und baue ich Immobilien - teils zur eigenen Nutzung, teils zur Vermietung. Sechs Projekte, die mir besonders am Herzen liegen."
+    },
+    "items": [
+      {
+        "key": "betriebsgebaeude",
+        "title": "Betriebsgebäude, Oberfranken",
+        "text": "Silbern verkleidete Halle mit Büro- und Werkstattflächen, gleichzeitig Wohnhausadresse. Sitz des eigenen Kfz-Betriebs.",
+        "imageAlt": "Silbern verkleidetes Betriebsgebäude"
+      },
+      {
+        "key": "gewerbehalle",
+        "title": "Gewerbehalle, Oberfranken",
+        "text": "Größere Halle mit weißer Fassade, seit Jahren vermietet.",
+        "imageAlt": "Gewerbehalle mit weißer Fassade"
+      },
+      {
+        "key": "hohensaas",
+        "title": "Ehemalige Autovermietung, Oberfranken",
+        "text": "Rot-weißes Gebäude, früher Station einer Autovermietung. Heute vermietete Gewerbefläche.",
+        "imageAlt": "Ehemaliges Gebäude einer Autovermietung, rot-weiß"
+      },
+      {
+        "key": "porto",
+        "title": "Ferienhaus, Porto",
+        "text": "Haus direkt am Strand, für die eigene Familie.",
+        "imageAlt": "Ferienhaus am Strand in Porto"
+      },
+      {
+        "key": "schleizer",
+        "title": "Umgebaute Tankstelle, Oberfranken",
+        "text": "Ehemalige Tankstelle, zum Gewerbeobjekt umgebaut. Erst als Autohaus vermietet, heute Standort eines Küchenstudios.",
+        "imageAlt": "Umgebaute ehemalige Tankstelle"
+      },
+      {
+        "key": "wien",
+        "title": "Altbauwohnung, Wien",
+        "text": "Gründerzeit, um 1900. Ein gemeinsames Projekt mit meinem Sohn: Vollsanierung mit neuen Fenstern, komplett erneuerter Elektrik, Sanitär- und Heizungsinstallation, Parkett, neuer Küche, neuem Bad und indirekter Beleuchtung.",
+        "imageAlt": "Sanierte Altbauwohnung in Wien"
+      }
+    ]
+  },
+  "facility": {
+    "meta": {
+      "title": "Facility Management - Marco Herrmann",
+      "description": "Facility Management für Gewerbeobjekte, Wohnanlagen und Hausverwaltungen in Oberfranken."
+    },
+    "intro": {
+      "heading": "Facility Management",
+      "text": "Facility Management für Gewerbeobjekte, Wohnanlagen und Hausverwaltungen in Oberfranken, aktuell unter {{FM}}."
+    },
+    "services": {
+      "heading": "Leistungen",
+      "items": [
+        {
+          "key": "winterdienst",
+          "title": "Winterdienst",
+          "text": "Räum- und Streudienst für Gewerbeflächen und Wohnanlagen, zuverlässig auch in den frühen Morgenstunden."
+        },
+        {
+          "key": "gruenflaechen",
+          "title": "Grünflächenpflege",
+          "text": "Rasenpflege, Heckenschnitt und Pflege der Außenanlagen, das ganze Jahr über."
+        },
+        {
+          "key": "kehrmaschine",
+          "title": "Kehrmaschine & Flächenreinigung",
+          "text": "Maschinelle Reinigung von Wegen, Höfen und Stellflächen."
+        },
+        {
+          "key": "gebaeudereinigung",
+          "title": "Gebäudereinigung",
+          "text": "Treppenhaus- und Unterhaltsreinigung für Wohn- und Gewerbeobjekte."
+        },
+        {
+          "key": "weitere",
+          "isPlaceholder": true,
+          "title": "Weitere Leistung folgt",
+          "text": ""
+        }
+      ]
+    },
+    "gallery": {
+      "heading": "Fuhrpark & Maschinen",
+      "items": [
+        { "key": "facility_fuhrpark", "alt": "Fuhrpark für den Facility-Einsatz" },
+        { "key": "facility_kehrmaschine", "alt": "Kehrmaschine im Einsatz" },
+        { "key": "facility_maeharbeiten", "alt": "Aufsitzmäher bei der Grünflächenpflege" },
+        { "key": "facility_gruenpflege", "alt": "Radlader bei Grünschnittarbeiten" },
+        { "key": "facility_winterdienst", "alt": "Radlader mit Schneeschild im Winterdienst" },
+        { "key": "facility_transport", "alt": "Fahrzeugtransport mit Anhänger" }
+      ]
+    }
+  },
+  "impressum": {
+    "meta": {
+      "title": "Impressum - Marco Herrmann",
+      "description": "Impressum nach § 5 DDG."
+    },
+    "heading": "Impressum",
+    "angabenHeading": "Angaben gemäß § 5 DDG",
+    "name": "Marco Herrmann",
+    "addressLines": ["Hofer Str. 45", "95183 Zedwitz"],
+    "phoneLabel": "Telefon",
+    "emailLabel": "E-Mail",
+    "haftungInhalteHeading": "Haftung für Inhalte",
+    "haftungInhalteText": "Als Diensteanbieter bin ich gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG bin ich als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werde ich diese Inhalte umgehend entfernen.",
+    "haftungLinksHeading": "Haftung für Links",
+    "haftungLinksText": "Dieses Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss habe. Deshalb kann ich für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werde ich derartige Links umgehend entfernen."
+  },
+  "datenschutz": {
+    "meta": {
+      "title": "Datenschutz - Marco Herrmann",
+      "description": "Datenschutzerklärung: keine Cookies, kein Tracking, keine Analysewerkzeuge."
+    },
+    "heading": "Datenschutz",
+    "intro": "Diese Website verzichtet bewusst auf Cookies, Tracking, Analysewerkzeuge und Kontaktformulare. Es werden keine personenbezogenen Daten erhoben, außer den technisch unvermeidbaren Server-Logfiles beim Aufruf der Seite.",
+    "sections": [
+      {
+        "heading": "Hosting und Server-Logfiles",
+        "text": "Beim Besuch dieser Website erhebt der Hosting-Anbieter automatisch technische Informationen, die Ihr Browser übermittelt. Das sind insbesondere: IP-Adresse, Datum und Uhrzeit der Anfrage, aufgerufene Seite, verwendeter Browser und Betriebssystem. Diese Server-Logfiles dienen ausschließlich der technischen Sicherheit und Stabilität des Angebots und werden nicht mit anderen Datenquellen zusammengeführt."
+      },
+      {
+        "heading": "Keine Cookies, kein Tracking",
+        "text": "Diese Website setzt keine Cookies und keine Analyse- oder Trackingwerkzeuge ein. Es findet keine Auswertung Ihres Nutzungsverhaltens statt."
+      },
+      {
+        "heading": "Schriftarten",
+        "text": "Die verwendeten Schriftarten sind lokal in diese Website eingebunden (self-hosted). Es findet keine Verbindung zu Google Fonts oder anderen externen Schriftarten-Diensten statt."
+      },
+      {
+        "heading": "Keine Formulare",
+        "text": "Diese Website enthält keine Kontaktformulare. Kontaktaufnahme erfolgt ausschließlich über die von Ihnen selbst gewählten Wege - Telefon, WhatsApp, E-Mail oder LinkedIn."
+      },
+      {
+        "heading": "Ihre Rechte",
+        "text": "Da keine personenbezogenen Daten über die technisch unvermeidbaren Server-Logfiles hinaus erhoben werden, ergeben sich hieraus in der Regel keine weiteren Auskunfts-, Berichtigungs- oder Löschungsansprüche. Bei Fragen zum Datenschutz können Sie mich jederzeit über die im Impressum genannten Kontaktdaten erreichen."
+      }
+    ]
   }
 }

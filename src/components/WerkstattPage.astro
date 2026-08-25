@@ -1,0 +1,120 @@
+---
+import { Hammer, MapPin, Phone, SprayCan, Truck, Wrench } from '@lucide/astro';
+import Layout from '../layouts/Layout.astro';
+import PageHeader from './PageHeader.astro';
+import ServiceCard from './ServiceCard.astro';
+import ContactButton from './ContactButton.astro';
+import { getContent, type Lang } from '../i18n/utils';
+import { images } from '../content/images';
+import { siteConfig, telHref } from '../content/site-config';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const content = getContent(lang);
+const t = content.werkstatt;
+
+const icons: Record<string, any> = {
+  wartung: Wrench,
+  reparatur: Hammer,
+  aufbereitung: SprayCan,
+  abschleppdienst: Truck,
+};
+
+const galleryImages = {
+  werkstatt_halle: images.werkstatt_halle,
+  werkstatt_hebebuehne: images.werkstatt_hebebuehne,
+  werkstatt_detail: images.werkstatt_detail,
+};
+---
+
+<Layout lang={lang} slug="werkstatt" title={t.meta.title} description={t.meta.description}>
+  <PageHeader heading={t.intro.heading} text={t.intro.text} />
+
+  <section class="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
+    <h2 class="sr-only">{t.services.heading}</h2>
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        t.services.items.map((service) => (
+          <ServiceCard icon={icons[service.key]} title={service.title} text={service.text} />
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="border-y border-base-800 bg-base-900">
+    <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+      <div class="fade-in-up flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div class="flex items-start gap-4">
+          <Truck class="mt-1 h-8 w-8 shrink-0 text-accent" aria-hidden="true" />
+          <div>
+            <h2 class="font-serif text-2xl text-ink sm:text-3xl">{t.towing.heading}</h2>
+            <p class="mt-2 text-ink-muted">{t.towing.text}</p>
+          </div>
+        </div>
+        <ContactButton
+          icon={Phone}
+          label={`${t.towing.callLabel}: ${siteConfig.telefonAbschlepp}`}
+          value={siteConfig.telefonAbschlepp}
+          href={telHref(siteConfig.telefonAbschlepp)}
+          placeholderNote={content.footer.placeholderNote}
+          large
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+    <h2 class="fade-in-up font-serif text-2xl text-ink sm:text-3xl">{t.gallery.heading}</h2>
+    <div class="mt-8 grid gap-4 sm:grid-cols-3">
+      {
+        t.gallery.items.map((item) => {
+          const image = galleryImages[item.key as keyof typeof galleryImages];
+          return (
+            <div class="fade-in-up aspect-[4/3] overflow-hidden rounded-sm bg-base-800">
+              <img
+                src={image.src}
+                alt={item.alt}
+                width={image.width}
+                height={image.height}
+                loading="lazy"
+                class="h-full w-full object-cover"
+              />
+            </div>
+          );
+        })
+      }
+    </div>
+  </section>
+
+  <section class="border-t border-base-800">
+    <div class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 sm:px-8 sm:py-20 md:grid-cols-2 md:gap-16">
+      <div class="fade-in-up flex items-start gap-4">
+        <MapPin class="mt-1 h-6 w-6 shrink-0 text-accent" aria-hidden="true" />
+        <div>
+          <h2 class="font-serif text-2xl text-ink sm:text-3xl">{t.location.heading}</h2>
+          <p class="mt-2 text-ink-muted">
+            {t.location.addressLines.map((line) => (
+              <>
+                {line}
+                <br />
+              </>
+            ))}
+          </p>
+        </div>
+      </div>
+      <div class="fade-in-up aspect-[4/3] overflow-hidden rounded-sm bg-base-800">
+        <img
+          src={images.werkstatt_standort.src}
+          alt={t.location.imageAlt}
+          width={images.werkstatt_standort.width}
+          height={images.werkstatt_standort.height}
+          loading="lazy"
+          class="h-full w-full object-cover"
+        />
+      </div>
+    </div>
+  </section>
+</Layout>

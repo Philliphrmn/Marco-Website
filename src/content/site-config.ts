@@ -1,14 +1,14 @@
 /**
  * Zentrale Kontaktdaten und sonstige Platzhalter.
- * Alle Werte hier ersetzen, sobald sie feststehen — siehe README.md.
+ * Alle Werte hier ersetzen, sobald sie feststehen - siehe README.md.
  */
 export const siteConfig = {
-  telefon: '{{TELEFON}}',
+  telefon: '+491708153033',
   telefonAbschlepp: '{{TELEFON_ABSCHLEPP}}',
   // Format ohne führende Nullen/Zeichen, z.B. 4917xxxxxxx
   whatsapp: '{{WHATSAPP}}',
-  email: '{{EMAIL}}',
-  linkedinUrl: '{{LINKEDIN_URL}}',
+  email: 'Marco.herrmann@kfz-herrmann-hof.de',
+  linkedinUrl: 'https://www.linkedin.com/in/marco-herrmann-664294a9/',
   fmFirmenname: '{{FM_FIRMENNAME}}',
   werkstattSeit: '{{WERKSTATT_SEIT}}',
 };

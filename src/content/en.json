@@ -1,14 +1,15 @@
 {
   "meta": {
     "siteName": "Marco Herrmann",
-    "homeTitle": "Marco Herrmann — Vehicle Workshop, Automobiles, Real Estate, Facility Management",
+    "homeTitle": "Marco Herrmann - Vehicle Workshop, Automobiles, Real Estate, Facility Management",
     "homeDescription": "Personal site of Marco Herrmann: vehicle workshop, automobiles, real estate and facility management in Upper Franconia, Germany."
   },
   "a11y": {
     "skipToContent": "Skip to content",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
-    "languageSwitch": "Switch language"
+    "languageSwitch": "Switch language",
+    "closeImage": "Close image"
   },
   "nav": {
     "links": [
@@ -31,15 +32,15 @@
   "home": {
     "hero": {
       "name": "MARCO HERRMANN",
-      "tagline": "Vehicle workshop, automobiles, real estate and facility management — Upper Franconia.",
+      "tagline": "Vehicle workshop, automobiles, real estate and facility management - Upper Franconia.",
       "imageAlt": "Moody photograph of a car at dusk"
     },
     "about": {
       "heading": "About",
       "paragraphs": [
-        "Born in 1977, trained as a master automotive technician. At 21, I took over my family's business — and over the following 25 years built it into a regional mobility and transport company, which I sold in 2023. That period shaped my entrepreneurial thinking more than anything before it.",
-        "What has stayed with me is what has always interested me: things with substance. Vehicles, buildings, businesses. Today I work across four fields — a vehicle workshop focused on Mercedes-Benz and sports cars, the restoration and trade of collector cars, the renovation of my own properties in Germany, Austria and Portugal, and a facility management business.",
-        "If any of this is of interest — feel free to get in touch."
+        "Born in 1977, trained as a master automotive technician. At 21, I took over my family's business - and over the following 25 years built it into a regional mobility and transport company, which I sold in 2023. That period shaped my entrepreneurial thinking more than anything before it.",
+        "What has stayed with me is what has always interested me: things with substance. Vehicles, buildings, businesses. Today I work across four fields - a vehicle workshop focused on Mercedes-Benz and sports cars, the restoration and trade of collector cars, the renovation of my own properties in Germany, Austria and Portugal, and a facility management business.",
+        "If any of this is of interest - feel free to get in touch."
       ],
       "imageAlt": "Portrait of Marco Herrmann"
     },
@@ -56,7 +57,7 @@
         {
           "key": "automobile",
           "title": "Automobiles",
-          "text": "Restored classics and select collector cars — a personal passion of mine.",
+          "text": "Restored classics and select collector cars - a personal passion of mine.",
           "href": "automobile",
           "imageAlt": "Detail shot of a collector car"
         },
@@ -76,5 +77,261 @@
         }
       ]
     }
+  },
+  "werkstatt": {
+    "meta": {
+      "title": "Workshop - Marco Herrmann",
+      "description": "Independent vehicle workshop focused on Mercedes-Benz and sports cars in Zedwitz, Upper Franconia. Maintenance, repair, detailing and towing service around the clock."
+    },
+    "intro": {
+      "heading": "Workshop",
+      "text": "Independent vehicle workshop with a focus on Mercedes-Benz and sports cars."
+    },
+    "services": {
+      "heading": "Services",
+      "items": [
+        {
+          "key": "wartung",
+          "title": "Maintenance & Inspection",
+          "text": "Regular maintenance to manufacturer specification, inspection and diagnostics - for Mercedes-Benz and other makes alike."
+        },
+        {
+          "key": "reparatur",
+          "title": "Repair & Servicing",
+          "text": "From minor repairs to larger servicing work - done properly and with an eye for detail."
+        },
+        {
+          "key": "aufbereitung",
+          "title": "Detailing & Care",
+          "text": "Interior and exterior detailing, so your car looks the way it did on day one."
+        },
+        {
+          "key": "abschleppdienst",
+          "title": "Towing Service",
+          "text": "Breakdown assistance and towing, available around the clock."
+        }
+      ]
+    },
+    "towing": {
+      "heading": "Towing Service",
+      "text": "Available 24 hours a day, 7 days a week.",
+      "callLabel": "Call now"
+    },
+    "gallery": {
+      "heading": "Inside the Workshop",
+      "items": [
+        { "key": "werkstatt_halle", "alt": "Workshop hall with several vehicles" },
+        { "key": "werkstatt_hebebuehne", "alt": "Vehicle on the hydraulic lift" },
+        { "key": "werkstatt_detail", "alt": "Detail shot from the workshop" }
+      ]
+    },
+    "location": {
+      "heading": "Location",
+      "addressLines": ["Hofer Str. 45", "95183 Zedwitz"],
+      "imageAlt": "Business premises of the workshop"
+    }
+  },
+  "automobile": {
+    "meta": {
+      "title": "Automobiles - Marco Herrmann",
+      "description": "Restored classics and select collector cars, with a focus on Mercedes-AMG."
+    },
+    "intro": {
+      "heading": "Automobiles",
+      "text": "What is a profession in the workshop is a passion here."
+    },
+    "restorations": {
+      "heading": "Restorations",
+      "beforeLabel": "Before",
+      "afterLabel": "After",
+      "items": [
+        {
+          "key": "restauration_01",
+          "title": "Mercedes-Benz 190 SL, 1962",
+          "text": "Found on a property together with several other disused vehicles, overgrown and unused for years. The body was fully repaired, the engine overhauled, and the soft top and interior newly made. Today it's a gleaming roadster in its original colour.",
+          "beforeAlt": "Two weathered vintage cars in a field before restoration",
+          "afterAlt": "Restored blue Mercedes-Benz roadster after restoration"
+        },
+        {
+          "key": "restauration_02",
+          "title": "Mercedes-Benz W113 Pagoda, 1968",
+          "text": "Taken on as a barn find with a seized engine and patchy history. Engine and transmission were fully rebuilt, chrome trim replated, and the soft top and interior renewed. It's back on the road today in its original specification.",
+          "beforeAlt": "Rusted vintage car in front of a storage building before restoration",
+          "afterAlt": "Restored white Mercedes-Benz Pagoda after restoration"
+        },
+        {
+          "key": "restauration_03",
+          "title": "Mercedes-Benz SL, 1988",
+          "text": "Taken on already stripped down to the bare body, with the paint and underbody badly affected. The body was repaired and painted by hand, the mechanicals fully overhauled, and the interior newly fitted. Today it's a complete, roadworthy car once again.",
+          "beforeAlt": "Bare classic car body on a stand in the workshop before restoration",
+          "afterAlt": "Restored silver Mercedes-Benz SL after restoration"
+        },
+        {
+          "key": "restauration_04",
+          "title": "Porsche 911, 1976",
+          "text": "Came into the workshop after years of daily use, with wear to the suspension and mechanicals. The engine was fully rebuilt, the suspension returned to original specification, and the paint refinished. Today it's a reliable classic with unspoiled character.",
+          "beforeAlt": "Porsche 911 on the lift during restoration",
+          "afterAlt": "Restored Porsche 911 after restoration"
+        }
+      ]
+    },
+    "gallery": {
+      "heading": "Showpieces",
+      "items": [
+        { "key": "schmuckstueck_01", "caption": "Mercedes-AMG, 2019 - ceramic brakes" },
+        { "key": "schmuckstueck_02", "caption": "Private collection - several classics under one roof" },
+        { "key": "schmuckstueck_03", "caption": "Mercedes-AMG SLS - gullwing doors" },
+        { "key": "schmuckstueck_04", "caption": "Mercedes-AMG, 2021 - hand-stitched leather" },
+        { "key": "schmuckstueck_05", "caption": "Mercedes-Benz 280 SE, 1972 - hood ornament detail" },
+        { "key": "schmuckstueck_06", "caption": "Mercedes-Benz W463 G-Class, 1998 - low-range gearing" }
+      ]
+    },
+    "outro": "Now and then I part with a car, or I'm looking for one. If that's of interest, just give me a call."
+  },
+  "immobilien": {
+    "meta": {
+      "title": "Real Estate - Marco Herrmann",
+      "description": "Six property projects across Germany, Austria and Portugal - renovated and built."
+    },
+    "intro": {
+      "heading": "Real Estate",
+      "text": "For many years I have been buying, renovating and building properties - some for my own use, some to let. Six projects that mean the most to me."
+    },
+    "items": [
+      {
+        "key": "betriebsgebaeude",
+        "title": "Business Premises, Upper Franconia",
+        "text": "A silver-clad hall with office and workshop space, also serving as the home address. Home of the vehicle workshop.",
+        "imageAlt": "Silver-clad business premises"
+      },
+      {
+        "key": "gewerbehalle",
+        "title": "Commercial Hall, Upper Franconia",
+        "text": "A larger hall with a white facade, let for several years.",
+        "imageAlt": "Commercial hall with white facade"
+      },
+      {
+        "key": "hohensaas",
+        "title": "Former Car Rental Station, Upper Franconia",
+        "text": "A red-and-white building, formerly a car rental station. Today a let commercial unit.",
+        "imageAlt": "Former car rental building, red and white"
+      },
+      {
+        "key": "porto",
+        "title": "Holiday Home, Porto",
+        "text": "A house right on the beach, for the family's own use.",
+        "imageAlt": "Holiday home on the beach in Porto"
+      },
+      {
+        "key": "schleizer",
+        "title": "Converted Petrol Station, Upper Franconia",
+        "text": "A former petrol station, converted into a commercial property. Previously let as a car dealership, today home to a kitchen showroom.",
+        "imageAlt": "Converted former petrol station"
+      },
+      {
+        "key": "wien",
+        "title": "Period Apartment, Vienna",
+        "text": "Late Wilhelminian style, circa 1900. A joint project with my son: full renovation with new windows, entirely renewed wiring, plumbing and heating, parquet flooring, a new kitchen, new bathroom and indirect lighting.",
+        "imageAlt": "Renovated period apartment in Vienna"
+      }
+    ]
+  },
+  "facility": {
+    "meta": {
+      "title": "Facility Management - Marco Herrmann",
+      "description": "Facility management for commercial properties, residential complexes and property management companies in Upper Franconia."
+    },
+    "intro": {
+      "heading": "Facility Management",
+      "text": "Facility management for commercial properties, residential complexes and property management companies in Upper Franconia, currently operating under {{FM}}."
+    },
+    "services": {
+      "heading": "Services",
+      "items": [
+        {
+          "key": "winterdienst",
+          "title": "Winter Service",
+          "text": "Snow clearing and gritting for commercial premises and residential complexes, reliable even in the early morning hours."
+        },
+        {
+          "key": "gruenflaechen",
+          "title": "Grounds Maintenance",
+          "text": "Lawn care, hedge trimming and upkeep of outdoor areas, all year round."
+        },
+        {
+          "key": "kehrmaschine",
+          "title": "Sweeping & Surface Cleaning",
+          "text": "Machine cleaning of paths, courtyards and parking areas."
+        },
+        {
+          "key": "gebaeudereinigung",
+          "title": "Building Cleaning",
+          "text": "Stairwell and routine cleaning for residential and commercial properties."
+        },
+        {
+          "key": "weitere",
+          "isPlaceholder": true,
+          "title": "Additional service coming soon",
+          "text": ""
+        }
+      ]
+    },
+    "gallery": {
+      "heading": "Fleet & Equipment",
+      "items": [
+        { "key": "facility_fuhrpark", "alt": "Fleet vehicles for facility work" },
+        { "key": "facility_kehrmaschine", "alt": "Sweeper in action" },
+        { "key": "facility_maeharbeiten", "alt": "Ride-on mower during grounds maintenance" },
+        { "key": "facility_gruenpflege", "alt": "Wheel loader clearing green waste" },
+        { "key": "facility_winterdienst", "alt": "Wheel loader with snow blade during winter service" },
+        { "key": "facility_transport", "alt": "Vehicle transport with trailer" }
+      ]
+    }
+  },
+  "impressum": {
+    "meta": {
+      "title": "Legal Notice - Marco Herrmann",
+      "description": "Legal notice pursuant to Section 5 DDG (German Digital Services Act)."
+    },
+    "heading": "Legal Notice",
+    "angabenHeading": "Information pursuant to Section 5 DDG",
+    "name": "Marco Herrmann",
+    "addressLines": ["Hofer Str. 45", "95183 Zedwitz"],
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "haftungInhalteHeading": "Liability for Content",
+    "haftungInhalteText": "As a service provider, I am responsible for my own content on these pages in accordance with general law under Section 7 (1) DDG. However, under Sections 8 to 10 DDG, I am not obliged as a service provider to monitor transmitted or stored third-party information or to investigate circumstances indicating unlawful activity. Obligations to remove or block the use of information under general law remain unaffected. However, liability in this regard is only possible from the point in time at which a specific infringement becomes known. Upon becoming aware of any such infringements, I will remove the relevant content immediately.",
+    "haftungLinksHeading": "Liability for Links",
+    "haftungLinksText": "This site contains links to external third-party websites over whose content I have no control. I therefore cannot accept any liability for this external content. The respective provider or operator of the linked pages is always responsible for their content. The linked pages were checked for possible legal violations at the time of linking. No unlawful content was identifiable at that time. Continuous monitoring of the content of linked pages is not reasonable without concrete evidence of a violation. Upon becoming aware of any infringements, I will remove such links immediately."
+  },
+  "datenschutz": {
+    "meta": {
+      "title": "Privacy Policy - Marco Herrmann",
+      "description": "Privacy policy: no cookies, no tracking, no analytics tools."
+    },
+    "heading": "Privacy Policy",
+    "intro": "This website deliberately avoids cookies, tracking, analytics tools and contact forms. No personal data is collected beyond the server log files that are technically unavoidable when the site is accessed.",
+    "sections": [
+      {
+        "heading": "Hosting and Server Log Files",
+        "text": "When you visit this website, the hosting provider automatically collects technical information transmitted by your browser. This includes: IP address, date and time of the request, page requested, and the browser and operating system used. These server log files are used solely for the technical security and stability of the site and are not combined with other data sources."
+      },
+      {
+        "heading": "No Cookies, No Tracking",
+        "text": "This website does not use cookies or any analytics or tracking tools. Your usage behaviour is not evaluated in any way."
+      },
+      {
+        "heading": "Fonts",
+        "text": "The fonts used on this website are hosted locally (self-hosted). No connection is made to Google Fonts or any other external font service."
+      },
+      {
+        "heading": "No Forms",
+        "text": "This website contains no contact forms. Contact is made exclusively through the channels you choose yourself - phone, WhatsApp, email or LinkedIn."
+      },
+      {
+        "heading": "Your Rights",
+        "text": "Since no personal data is collected beyond the technically unavoidable server log files, no further rights to access, correction or deletion typically arise from this. If you have any questions about data protection, you can reach me at any time using the contact details listed in the legal notice."
+      }
+    ]
   }
 }

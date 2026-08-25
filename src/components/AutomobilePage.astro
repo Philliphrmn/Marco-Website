@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from './PageHeader.astro';
+import Lightbox from './Lightbox.astro';
+import { getContent, type Lang } from '../i18n/utils';
+import { images } from '../content/images';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const content = getContent(lang);
+const t = content.automobile;
+const closeLabel = content.a11y.closeImage;
+---
+
+<Layout lang={lang} slug="automobile" title={t.meta.title} description={t.meta.description}>
+  <PageHeader heading={t.intro.heading} text={t.intro.text} />
+
+  <section class="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
+    <h2 class="fade-in-up font-serif text-2xl text-ink sm:text-3xl">{t.restorations.heading}</h2>
+    <div class="mt-8 grid gap-16 sm:grid-cols-2">
+      {
+        t.restorations.items.map((item) => {
+          const vorher = images[`${item.key}_vorher` as keyof typeof images];
+          const nachher = images[`${item.key}_nachher` as keyof typeof images];
+          return (
+            <article class="fade-in-up">
+              <div class="grid grid-cols-2 gap-2 sm:gap-3">
+                <figure>
+                  <div class="aspect-[4/5] overflow-hidden rounded-sm bg-base-800">
+                    <img
+                      src={vorher.src}
+                      alt={item.beforeAlt}
+                      width={vorher.width}
+                      height={vorher.height}
+                      loading="lazy"
+                      class="h-full w-full object-cover"
+                    />
+                  </div>
+                  <figcaption class="mt-2 text-xs uppercase tracking-wide text-ink-muted">
+                    {t.restorations.beforeLabel}
+                  </figcaption>
+                </figure>
+                <figure>
+                  <div class="aspect-[4/5] overflow-hidden rounded-sm bg-base-800">
+                    <img
+                      src={nachher.src}
+                      alt={item.afterAlt}
+                      width={nachher.width}
+                      height={nachher.height}
+                      loading="lazy"
+                      class="h-full w-full object-cover"
+                    />
+                  </div>
+                  <figcaption class="mt-2 text-xs uppercase tracking-wide text-ink-muted">
+                    {t.restorations.afterLabel}
+                  </figcaption>
+                </figure>
+              </div>
+              <h3 class="mt-5 font-serif text-xl text-ink">{item.title}</h3>
+              <p class="mt-2 max-w-2xl text-sm text-ink-muted">{item.text}</p>
+            </article>
+          );
+        })
+      }
+    </div>
+  </section>
+
+  <section class="border-t border-base-800 bg-base-900">
+    <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+      <h2 class="fade-in-up font-serif text-2xl text-ink sm:text-3xl">{t.gallery.heading}</h2>
+      <div class="mt-8 grid gap-4 sm:grid-cols-3">
+        {
+          t.gallery.items.map((item) => {
+            const image = images[item.key as keyof typeof images];
+            return (
+              <button
+                type="button"
+                data-lightbox-trigger
+                data-src={image.src}
+                data-alt={item.caption}
+                data-caption={item.caption}
+                class="fade-in-up group block w-full text-left"
+              >
+                <div class="aspect-[4/5] overflow-hidden rounded-sm bg-base-800">
+                  <img
+                    src={image.src}
+                    alt={item.caption}
+                    width={image.width}
+                    height={image.height}
+                    loading="lazy"
+                    class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                </div>
+                <p class="mt-3 text-xs text-ink-muted">{item.caption}</p>
+              </button>
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-5 py-16 text-center sm:px-8 sm:py-20">
+    <p class="fade-in-up mx-auto max-w-xl text-lg text-ink-muted">{t.outro}</p>
+  </section>
+
+  <Lightbox closeLabel={closeLabel} />
+</Layout>
