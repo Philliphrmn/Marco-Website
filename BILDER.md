@@ -21,9 +21,9 @@ noch auf lizenzfreie Unsplash-Platzhalter.
 | Platzhalter | `hero` | `hero-marco-herrmann.jpg` | Startseite, Titelbild | 3:2 | 1920 px |
 | ✅ | `portrait` | `portrait-marco-herrmann.jpg` | Startseite, „Über mich" | 4:5 | - |
 | ✅ | `tile_werkstatt` | `werkstatt-showroom.jpg` | Kachel „Kfz-Service" | 4:3 | - |
-| ✅ | `tile_automobile` | `tile-automobile.jpg` | Kachel „Automobile" | 4:3 | - |
-| ✅ | `tile_immobilien` | `tile-immobilien.jpg` | Kachel „Immobilien" | 4:3 | - |
-| ✅ | `tile_facility` | `tile-facility.jpg` | Kachel „Facility Management" | 4:3 | - |
+| ✅ | `tile_automobile` | `automobile-sammlung.jpg` | Kachel „Automobile" | 4:3 | - |
+| ✅ | `tile_immobilien` | `immobilien-gewerbehalle.jpg` | Kachel „Immobilien" | 21:10 | - |
+| ✅ | `tile_facility` | `facility-transport.jpg` | Kachel „Facility Management" | 4:3 | - |
 
 ## Werkstatt
 

@@ -40,23 +40,23 @@ export const images = {
     height: 1800,
   },
 
-  // Echtes Foto: Mercedes-AMG GT vor der Werkstatt
+  // Echtes Foto: eigene Sammlung klassischer Mercedes im Depot
   tile_automobile: {
-    src: '/images/tile-automobile.jpg',
+    src: '/images/automobile-sammlung.jpg',
     width: 2400,
     height: 1800,
   },
 
-  // Echtes Foto: ehemalige Autovermietung (heute vermietete Gewerbefläche)
+  // Echtes Foto: Gewerbehalle zur goldenen Stunde
   tile_immobilien: {
-    src: '/images/tile-immobilien.jpg',
+    src: '/images/immobilien-gewerbehalle.jpg',
     width: 2400,
-    height: 1800,
+    height: 1163,
   },
 
-  // Echtes Foto: Kehrmaschine im Einsatz
+  // Echtes Foto: G-Klasse mit Radlader auf dem Anhänger
   tile_facility: {
-    src: '/images/tile-facility.jpg',
+    src: '/images/facility-transport.jpg',
     width: 2400,
     height: 1800,
   },
