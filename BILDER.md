@@ -38,21 +38,29 @@ noch auf lizenzfreie Unsplash-Platzhalter.
 
 | Status | Key | Einsatzort | Format |
 |---|---|---|---|
-| Platzhalter | `restauration_01_vorher` / `_nachher` | Restaurierung 1 (Vorher/Nachher) | 3:2 / 4:5 |
-| Platzhalter | `restauration_02_vorher` / `_nachher` | Restaurierung 2 (Vorher/Nachher) | 3:2 / 4:5 |
-| Platzhalter | `restauration_03_vorher` / `_nachher` | Restaurierung 3 (Vorher/Nachher) | 3:2 / 4:5 |
-| Platzhalter | `restauration_04_vorher` / `_nachher` | Restaurierung 4 (Vorher/Nachher) | 4:5 / 4:5 |
-| Platzhalter | `schmuckstueck_01` | Schmuckstücke: Keramikbremse | 4:5 |
-| ✅ | `schmuckstueck_02` | Schmuckstücke: eigene Sammlung | 4:3 |
-| ✅ | `schmuckstueck_03` | Schmuckstücke: SLS Flügeltüren | 16:9 |
-| Platzhalter | `schmuckstueck_04` | Schmuckstücke: Leder-Detail | 4:5 |
-| Platzhalter | `schmuckstueck_05` | Schmuckstücke: Kühlerfigur | 1:1 |
-| Platzhalter | `schmuckstueck_06` | Schmuckstücke: G-Klasse | 4:5 |
+| Stockfoto (bewusst) | `automobile_sammlung` | Eigene Sammlung, Fahrzeug unter Abdeckung | 8:5 |
+| ✅ | `automobile_restaurierung_fahrwerk` | Restaurierung: Fahrwerk/Rahmen | 4:3 |
+| ✅ | `automobile_restaurierung_motor` | Restaurierung: Motor auf dem Ständer | 4:3 |
+| ✅ | `automobile_restaurierung_einbau` | Restaurierung: Motor-/Achseinbau | 4:3 |
+| ✅ | `automobile_restaurierung_detail` | Restaurierung: Bremse/Radnabe im Detail | 4:3 |
+| ✅ | `automobile_sls` | Fahrzeughandel: SLS auf dem Anhänger | 4:3 |
+| Stockfoto (bewusst) | `automobile_gt2rs` | Fahrzeughandel: Porsche 911 GT2 RS | 4:3 |
 
-Hinweis: Für die vier Vorher/Nachher-Paare gibt es noch keine passenden
-eigenen Restaurierungsfotos - hier bitte eigene Projektbilder in den
-jeweils gleichen Bildausschnitt (Fahrzeug vorher / dasselbe Fahrzeug
-nachher) einsetzen, sonst wirkt der Vergleich nicht stimmig.
+Hinweis zu `automobile_sammlung`: Auf Wunsch bewusst ein lizenzfreies,
+stimmungsvolles Stockfoto (Unsplash) eines abgedeckten Fahrzeugs statt des
+eigenen Übersichtsfotos vom Depot - für den gewünschten "geheimnisvollen"
+Look. Das echte Depotfoto bleibt unter `tile_automobile` (Startseiten-Kachel)
+im Einsatz.
+
+Hinweis zu `automobile_gt2rs`: Auf Wunsch bewusst ein lizenzfreies Stockfoto
+(Unsplash) statt eines eigenen Fotos - kein Handlungsbedarf, außer ein
+eigenes Foto eines gehandelten Exoten soll später eingesetzt werden.
+
+Hinweis: Die frei erfundenen Vorher/Nachher-Restaurierungsgeschichten wurden
+entfernt, da es dafür keine echte Dokumentation gab. Die Seite zeigt jetzt
+nur noch echte Fotos aus der eigenen Sammlung und vom Fahrzeughandel. Weitere
+eigene Fotos (z. B. von weiteren Fahrzeugen aus der Sammlung oder
+abgeschlossenen Verkäufen) können bei Bedarf ergänzt werden.
 
 ## Immobilien
 

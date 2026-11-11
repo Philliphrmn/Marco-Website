@@ -134,56 +134,33 @@
   "automobile": {
     "meta": {
       "title": "Automobiles - Marco Herrmann",
-      "description": "Restored classics and select collector cars, with a focus on Mercedes-AMG."
+      "description": "A private collection of classic Mercedes-Benz cars and occasional trading in special vehicles."
     },
     "intro": {
       "heading": "Automobiles",
       "text": "What is a profession in the workshop is a passion here."
     },
-    "restorations": {
-      "heading": "Restorations",
-      "beforeLabel": "Before",
-      "afterLabel": "After",
+    "collection": {
+      "heading": "Private Collection",
+      "text": "I've been collecting and maintaining classic Mercedes-Benz cars for many years - kept in a hall of my own, cared for myself, and preserved as close to original condition as possible.",
+      "coverAlt": "Vehicle under a cover in a dim hall"
+    },
+    "restoration": {
+      "heading": "Restoration",
+      "text": "When it's needed, I go down to the last detail: suspension, axles and engine are fully stripped, reconditioned and rebuilt by hand - true for any vehicle, but especially for classics.",
       "items": [
-        {
-          "key": "restauration_01",
-          "title": "Mercedes-Benz 190 SL, 1962",
-          "text": "Found on a property together with several other disused vehicles, overgrown and unused for years. The body was fully repaired, the engine overhauled, and the soft top and interior newly made. Today it's a gleaming roadster in its original colour.",
-          "beforeAlt": "Two weathered vintage cars in a field before restoration",
-          "afterAlt": "Restored blue Mercedes-Benz roadster after restoration"
-        },
-        {
-          "key": "restauration_02",
-          "title": "Mercedes-Benz W113 Pagoda, 1968",
-          "text": "Taken on as a barn find with a seized engine and patchy history. Engine and transmission were fully rebuilt, chrome trim replated, and the soft top and interior renewed. It's back on the road today in its original specification.",
-          "beforeAlt": "Rusted vintage car in front of a storage building before restoration",
-          "afterAlt": "Restored white Mercedes-Benz Pagoda after restoration"
-        },
-        {
-          "key": "restauration_03",
-          "title": "Mercedes-Benz SL, 1988",
-          "text": "Taken on already stripped down to the bare body, with the paint and underbody badly affected. The body was repaired and painted by hand, the mechanicals fully overhauled, and the interior newly fitted. Today it's a complete, roadworthy car once again.",
-          "beforeAlt": "Bare classic car body on a stand in the workshop before restoration",
-          "afterAlt": "Restored silver Mercedes-Benz SL after restoration"
-        },
-        {
-          "key": "restauration_04",
-          "title": "Porsche 911, 1976",
-          "text": "Came into the workshop after years of daily use, with wear to the suspension and mechanicals. The engine was fully rebuilt, the suspension returned to original specification, and the paint refinished. Today it's a reliable classic with unspoiled character.",
-          "beforeAlt": "Porsche 911 on the lift during restoration",
-          "afterAlt": "Restored Porsche 911 after restoration"
-        }
+        { "key": "automobile_restaurierung_fahrwerk", "alt": "Freshly rebuilt chassis with new axles and suspension" },
+        { "key": "automobile_restaurierung_motor", "alt": "Reconditioned engine on the engine stand" },
+        { "key": "automobile_restaurierung_einbau", "alt": "Engine and axle assembly being installed" },
+        { "key": "automobile_restaurierung_detail", "alt": "Brake and hub assembly in close-up during reassembly" }
       ]
     },
-    "gallery": {
-      "heading": "Showpieces",
+    "trade": {
+      "heading": "Vehicle Trading",
+      "text": "Alongside the private collection, I occasionally trade select vehicles too - from everyday cars to exotics. Pickup, inspection and handover I handle myself.",
       "items": [
-        { "key": "schmuckstueck_01", "caption": "Mercedes-AMG, 2019 - ceramic brakes" },
-        { "key": "schmuckstueck_02", "caption": "Private collection - several classics under one roof" },
-        { "key": "schmuckstueck_03", "caption": "Mercedes-AMG SLS - gullwing doors" },
-        { "key": "schmuckstueck_04", "caption": "Mercedes-AMG, 2021 - hand-stitched leather" },
-        { "key": "schmuckstueck_05", "caption": "Mercedes-Benz 280 SE, 1972 - hood ornament detail" },
-        { "key": "schmuckstueck_06", "caption": "Mercedes-Benz W463 G-Class, 1998 - low-range gearing" }
+        { "key": "automobile_sls", "alt": "Mercedes-AMG SLS being transported on a trailer" },
+        { "key": "automobile_gt2rs", "alt": "Porsche 911 GT2 RS - example of trading in special vehicles" }
       ]
     },
     "outro": "Now and then I part with a car, or I'm looking for one. If that's of interest, just give me a call."

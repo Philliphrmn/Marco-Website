@@ -134,56 +134,33 @@
   "automobile": {
     "meta": {
       "title": "Automobile - Marco Herrmann",
-      "description": "Restaurierte Klassiker und ausgesuchte Sammlerfahrzeuge, Schwerpunkt Mercedes-AMG."
+      "description": "Eigene Sammlung klassischer Mercedes-Benz Fahrzeuge und gelegentlicher Handel mit besonderen Automobilen."
     },
     "intro": {
       "heading": "Automobile",
       "text": "Was in der Werkstatt Beruf ist, ist hier Leidenschaft."
     },
-    "restorations": {
-      "heading": "Restaurierungen",
-      "beforeLabel": "Vorher",
-      "afterLabel": "Nachher",
+    "collection": {
+      "heading": "Eigene Sammlung",
+      "text": "Seit vielen Jahren sammle und pflege ich klassische Mercedes-Benz Fahrzeuge - in einer eigenen Halle, in Eigenregie und möglichst im Originalzustand erhalten.",
+      "coverAlt": "Fahrzeug unter einer Abdeckung in einer dunklen Halle"
+    },
+    "restoration": {
+      "heading": "Restaurierung",
+      "text": "Bei Bedarf gehe ich bis ins Detail: Fahrwerk, Achsen und Motor werden komplett zerlegt, aufgearbeitet und in Handarbeit wieder aufgebaut - das gilt für jedes Fahrzeug, ganz besonders aber für Oldtimer.",
       "items": [
-        {
-          "key": "restauration_01",
-          "title": "Mercedes-Benz 190 SL, Baujahr 1962",
-          "text": "Gefunden auf einem Grundstück mit mehreren stillgelegten Fahrzeugen, überwuchert und seit Jahren ungenutzt. Karosserie komplett instandgesetzt, Motor überholt, Verdeck und Interieur neu angefertigt. Heute ein glänzender Roadster in Originalfarbe.",
-          "beforeAlt": "Zwei verwitterte Oldtimer auf einer Wiese vor der Restaurierung",
-          "afterAlt": "Restaurierter blauer Mercedes-Benz Roadster nach der Restaurierung"
-        },
-        {
-          "key": "restauration_02",
-          "title": "Mercedes-Benz W113 Pagode, Baujahr 1968",
-          "text": "Übernommen als Scheunenfund mit stillgelegtem Motor und lückenhafter Historie. Motor und Getriebe komplett revidiert, Chromteile neu verchromt, Verdeck und Interieur erneuert. Heute wieder im Originalzustand unterwegs.",
-          "beforeAlt": "Verrosteter Oldtimer vor einer Lagerhalle vor der Restaurierung",
-          "afterAlt": "Restaurierte weiße Mercedes-Benz Pagode nach der Restaurierung"
-        },
-        {
-          "key": "restauration_03",
-          "title": "Mercedes-Benz SL, Baujahr 1988",
-          "text": "Bei Übernahme bereits bis auf die Karosserie zerlegt, Lack und Unterboden stark angegriffen. Karosserie in Handarbeit instandgesetzt und lackiert, Technik komplett überholt, Innenraum neu ausgestattet. Heute wieder ein vollständiges, fahrbereites Fahrzeug.",
-          "beforeAlt": "Karosserie eines Oldtimers auf einem Bock in der Werkstatt vor der Restaurierung",
-          "afterAlt": "Restaurierter silberner Mercedes-Benz SL nach der Restaurierung"
-        },
-        {
-          "key": "restauration_04",
-          "title": "Porsche 911, Baujahr 1976",
-          "text": "Nach Jahren im Alltagseinsatz mit Verschleiß an Fahrwerk und Technik in die Werkstatt gekommen. Motor komplett revidiert, Fahrwerk auf Originalspezifikation zurückgebaut, Lack aufbereitet. Heute ein zuverlässiger Klassiker mit unverfälschtem Charakter.",
-          "beforeAlt": "Porsche 911 auf der Hebebühne während der Restaurierung",
-          "afterAlt": "Restaurierter Porsche 911 nach der Restaurierung"
-        }
+        { "key": "automobile_restaurierung_fahrwerk", "alt": "Frisch aufgebautes Fahrwerk mit neuen Achsen und Federung" },
+        { "key": "automobile_restaurierung_motor", "alt": "Überholter Motor auf dem Motorständer" },
+        { "key": "automobile_restaurierung_einbau", "alt": "Motor- und Achseinheit beim Einbau" },
+        { "key": "automobile_restaurierung_detail", "alt": "Bremse und Radnabe in Detailansicht während der Montage" }
       ]
     },
-    "gallery": {
-      "heading": "Schmuckstücke",
+    "trade": {
+      "heading": "Fahrzeughandel",
+      "text": "Neben der eigenen Sammlung handle ich gelegentlich auch mit ausgesuchten Fahrzeugen - vom Alltagswagen bis zum Exoten. Abholung, Prüfung und Übergabe übernehme ich persönlich.",
       "items": [
-        { "key": "schmuckstueck_01", "caption": "Mercedes-AMG, Baujahr 2019 - Keramikbremsanlage" },
-        { "key": "schmuckstueck_02", "caption": "Eigene Sammlung - mehrere Klassiker unter einem Dach" },
-        { "key": "schmuckstueck_03", "caption": "Mercedes-AMG SLS - Flügeltüren" },
-        { "key": "schmuckstueck_04", "caption": "Mercedes-AMG, Baujahr 2021 - Handgenähtes Leder" },
-        { "key": "schmuckstueck_05", "caption": "Mercedes-Benz 280 SE, Baujahr 1972 - Kühlerfigur im Detail" },
-        { "key": "schmuckstueck_06", "caption": "Mercedes-Benz W463 G-Klasse, Baujahr 1998 - Geländeuntersetzung" }
+        { "key": "automobile_sls", "alt": "Mercedes-AMG SLS beim Transport auf dem Anhänger" },
+        { "key": "automobile_gt2rs", "alt": "Porsche 911 GT2 RS - Beispiel für den Handel mit besonderen Fahrzeugen" }
       ]
     },
     "outro": "Gelegentlich trenne ich mich von einem Fahrzeug oder suche eines. Bei Interesse: rufen Sie mich einfach an."

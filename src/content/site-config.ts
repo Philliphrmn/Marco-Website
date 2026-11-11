@@ -6,7 +6,7 @@ export const siteConfig = {
   telefon: '+491708153033',
   telefonAbschlepp: '{{TELEFON_ABSCHLEPP}}',
   // Format ohne führende Nullen/Zeichen, z.B. 4917xxxxxxx
-  whatsapp: '{{WHATSAPP}}',
+  whatsapp: '+491708153033',
   email: 'Marco.herrmann@kfz-herrmann-hof.de',
   linkedinUrl: 'https://www.linkedin.com/in/marco-herrmann-664294a9/',
   fmFirmenname: '{{FM_FIRMENNAME}}',

@@ -88,94 +88,55 @@ export const images = {
     height: 1719,
   },
 
-  // --- Automobile: Restaurierungen (Vorher/Nachher-Paare) ---
+  // --- Automobile: Eigene Sammlung ---
 
-  // Ziel: public/images/restauration-01-vorher.jpg · Seitenverhältnis 3:2 · min. 1200px breit
-  restauration_01_vorher: {
-    src: 'https://images.unsplash.com/photo-1778798323804-2b4404ec93b5?q=80&w=1200&h=800&auto=format&fit=crop',
-    width: 1200,
-    height: 800,
-  },
-  // Ziel: public/images/restauration-01-nachher.jpg · Seitenverhältnis 3:2 · min. 1200px breit
-  restauration_01_nachher: {
-    src: 'https://images.unsplash.com/photo-1661297663391-8e01b41c8b7f?q=80&w=1200&h=800&auto=format&fit=crop',
-    width: 1200,
-    height: 800,
-  },
-  // Ziel: public/images/restauration-02-vorher.jpg · Seitenverhältnis 3:2 · min. 1200px breit
-  restauration_02_vorher: {
-    src: 'https://images.unsplash.com/photo-1779588008640-d15ce5089649?q=80&w=1200&h=800&auto=format&fit=crop',
-    width: 1200,
-    height: 800,
-  },
-  // Ziel: public/images/restauration-02-nachher.jpg · Seitenverhältnis 4:5 (Hochformat) · min. 1200px breit
-  restauration_02_nachher: {
-    src: 'https://images.unsplash.com/photo-1596463097767-79a39851a776?q=80&w=1200&h=1500&auto=format&fit=crop',
-    width: 1200,
-    height: 1500,
-  },
-  // Ziel: public/images/restauration-03-vorher.jpg · Seitenverhältnis 3:2 · min. 1200px breit
-  restauration_03_vorher: {
-    src: 'https://images.unsplash.com/photo-1591278169757-deac26e49555?q=80&w=1200&h=800&auto=format&fit=crop',
-    width: 1200,
-    height: 800,
-  },
-  // Ziel: public/images/restauration-03-nachher.jpg · Seitenverhältnis 4:5 (Hochformat) · min. 1200px breit
-  restauration_03_nachher: {
-    src: 'https://images.unsplash.com/photo-1778274888822-92821e754c8c?q=80&w=1200&h=1500&auto=format&fit=crop',
-    width: 1200,
-    height: 1500,
-  },
-  // Ziel: public/images/restauration-04-vorher.jpg · Seitenverhältnis 4:5 (Hochformat) · min. 1200px breit
-  restauration_04_vorher: {
-    src: 'https://images.unsplash.com/photo-1610092708835-af669294f3f3?q=80&w=1200&h=1500&auto=format&fit=crop',
-    width: 1200,
-    height: 1500,
-  },
-  // Ziel: public/images/restauration-04-nachher.jpg · Seitenverhältnis 4:5 (Hochformat) · min. 1200px breit
-  restauration_04_nachher: {
-    src: 'https://images.unsplash.com/photo-1772223641450-09467b9d2281?q=80&w=1200&h=1500&auto=format&fit=crop',
-    width: 1200,
-    height: 1500,
+  // Stockfoto (bewusst): Fahrzeug unter Abdeckung in dunkler Tiefgarage, Unsplash-Lizenz
+  automobile_sammlung: {
+    src: 'https://images.unsplash.com/photo-1542317048-7a6ce1a438c8?q=80&w=1400&auto=format&fit=crop',
+    width: 1400,
+    height: 875,
   },
 
-  // --- Automobile: Schmuckstücke ---
+  // --- Automobile: Restaurierung (Impressionen aus laufenden Projekten) ---
 
-  // Ziel: public/images/schmuckstueck-01.jpg · Seitenverhältnis 4:5 (Hochformat) · min. 1200px breit
-  schmuckstueck_01: {
-    src: 'https://images.unsplash.com/photo-1748172215389-cc4691924dbd?q=80&w=1200&h=1500&auto=format&fit=crop',
-    width: 1200,
-    height: 1500,
+  // Echtes Foto: frisch aufgebautes Fahrwerk/Rahmen
+  automobile_restaurierung_fahrwerk: {
+    src: '/images/automobile-restaurierung-fahrwerk.jpg',
+    width: 1800,
+    height: 1350,
   },
-  // Echtes Foto: Sammlung eigener Klassiker
-  schmuckstueck_02: {
-    src: '/images/automobile-sammlung.jpg',
-    width: 2400,
-    height: 1800,
+  // Echtes Foto: überholter Motor auf dem Motorständer
+  automobile_restaurierung_motor: {
+    src: '/images/automobile-restaurierung-motor.jpg',
+    width: 1800,
+    height: 1350,
   },
-  // Echtes Foto: Mercedes-AMG SLS mit Flügeltüren
-  schmuckstueck_03: {
+  // Echtes Foto: Motor-/Achseinheit beim Einbau
+  automobile_restaurierung_einbau: {
+    src: '/images/automobile-restaurierung-einbau.jpg',
+    width: 1800,
+    height: 1350,
+  },
+  // Echtes Foto: Bremse/Radnabe in Detailansicht während der Montage
+  automobile_restaurierung_detail: {
+    src: '/images/automobile-restaurierung-detail.jpg',
+    width: 1800,
+    height: 1350,
+  },
+
+  // --- Automobile: Fahrzeughandel ---
+
+  // Echtes Foto: Mercedes-AMG SLS beim Transport auf dem Anhänger
+  automobile_sls: {
     src: '/images/automobile-sls-fluegeltueren.jpg',
     width: 2400,
     height: 1350,
   },
-  // Ziel: public/images/schmuckstueck-04.jpg · Seitenverhältnis 4:5 (Hochformat) · min. 1200px breit
-  schmuckstueck_04: {
-    src: 'https://images.unsplash.com/photo-1756239772909-ef56b58e5f65?q=80&w=1200&h=1500&auto=format&fit=crop',
+  // Stockfoto (bewusst): Porsche 911 GT2 RS - Beispiel für den Exoten-Handel, Unsplash-Lizenz
+  automobile_gt2rs: {
+    src: 'https://images.unsplash.com/photo-1747077138170-dbd888b209d4?q=80&w=1200&h=900&auto=format&fit=crop',
     width: 1200,
-    height: 1500,
-  },
-  // Ziel: public/images/schmuckstueck-05.jpg · Seitenverhältnis 1:1 · min. 1200px breit
-  schmuckstueck_05: {
-    src: 'https://images.unsplash.com/photo-1610391546422-1c9bb059d7f7?q=80&w=1200&h=1200&auto=format&fit=crop',
-    width: 1200,
-    height: 1200,
-  },
-  // Ziel: public/images/schmuckstueck-06.jpg · Seitenverhältnis 4:5 (Hochformat) · min. 1200px breit
-  schmuckstueck_06: {
-    src: 'https://images.unsplash.com/photo-1645783666828-d6ed6202dd08?q=80&w=1200&h=1500&auto=format&fit=crop',
-    width: 1200,
-    height: 1500,
+    height: 900,
   },
 
   // --- Immobilien ---
