@@ -1,0 +1,43 @@
+---
+import { Image } from 'astro:assets';
+import { sectionImages } from '../content/images';
+
+interface Props {
+  id: string;
+  label: string;
+  heading: string;
+  text: string;
+  tags: string[];
+  imageAlt: string;
+  /** Laufende Nummer, steuert Anzeige ("01") und die Bildseite (abwechselnd). */
+  index: number;
+}
+
+const { id, label, heading, text, tags, imageAlt, index } = Astro.props;
+const image = sectionImages[id];
+const imageRight = index % 2 === 1;
+---
+
+<section id={id} class="border-t border-base-800">
+  <div class="mx-auto grid max-w-6xl items-center gap-8 px-5 py-16 sm:px-8 md:grid-cols-2 md:gap-16 md:py-28">
+    <Image
+      src={image}
+      alt={imageAlt}
+      widths={[480, 800, 1200]}
+      sizes="(min-width: 768px) 50vw, 100vw"
+      class:list={['reveal aspect-[4/3] w-full rounded-sm object-cover', imageRight && 'md:order-2']}
+    />
+    <div class="reveal">
+      <p class="text-xs uppercase tracking-[0.25em] text-accent">
+        <span class="text-ink-muted">{String(index).padStart(2, '0')}</span>
+        <span class="mx-2 text-base-600" aria-hidden="true">—</span>
+        {label}
+      </p>
+      <h2 class="mt-5 font-serif text-3xl leading-tight text-ink sm:text-4xl">{heading}</h2>
+      <p class="mt-5 text-lg leading-relaxed text-ink-muted">{text}</p>
+      <ul class="mt-8 flex flex-wrap gap-2">
+        {tags.map((tag) => <li class="rounded-full border border-base-700 px-3.5 py-1.5 text-xs text-ink-muted">{tag}</li>)}
+      </ul>
+    </div>
+  </div>
+</section>

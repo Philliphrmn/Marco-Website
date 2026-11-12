@@ -1,0 +1,48 @@
+---
+import { Image } from 'astro:assets';
+import { Phone } from '@lucide/astro';
+import { getContent, type Lang } from '../i18n/utils';
+import { images } from '../content/images';
+import { siteConfig, telHref } from '../content/site-config';
+import LinkButton from './LinkButton.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const t = getContent(Astro.props.lang).hero;
+---
+
+<section id="top" class="relative isolate flex min-h-[calc(100svh-4.5rem)] overflow-hidden">
+  <!--
+    Mobil: Bild im oberen Teil, blendet nach unten in den Text über.
+    Ab md: rechte Bildhälfte, blendet nach links aus. Der dunkle
+    Studiohintergrund geht dabei nahtlos in die Seite über.
+  -->
+  <Image
+    src={images.hero}
+    alt={t.imageAlt}
+    widths={[480, 736]}
+    sizes="(min-width: 768px) 50vw, 100vw"
+    loading="eager"
+    fetchpriority="high"
+    class="absolute inset-x-0 top-0 -z-10 h-[68%] w-full object-cover object-[50%_62%] [mask-image:linear-gradient(to_bottom,black_55%,transparent)] md:inset-y-0 md:left-auto md:h-full md:w-1/2 md:object-center md:[mask-image:linear-gradient(to_right,transparent,black_45%)]"
+  />
+
+  <div class="mx-auto flex w-full max-w-6xl items-end px-5 pt-32 pb-16 sm:px-8 md:items-center md:py-24">
+    <div class="max-w-xl">
+      <p class="text-xs uppercase tracking-[0.25em] text-accent">{t.eyebrow}</p>
+      <h1 class="mt-5 font-serif text-5xl leading-[1.05] text-ink sm:text-6xl lg:text-7xl">
+        {siteConfig.name}
+      </h1>
+      <p class="mt-6 max-w-md text-base text-ink-muted sm:text-lg">{t.tagline}</p>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <LinkButton href="#kontakt" variant="primary">{t.ctaContact}</LinkButton>
+        <LinkButton href={telHref(siteConfig.telefon)}>
+          <Phone class="h-4 w-4" aria-hidden="true" />
+          {t.ctaCall}
+        </LinkButton>
+      </div>
+    </div>
+  </div>
+</section>

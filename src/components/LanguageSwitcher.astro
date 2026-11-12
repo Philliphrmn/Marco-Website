@@ -10,15 +10,17 @@ interface Props {
 const { lang, slug, label } = Astro.props;
 ---
 
-<nav aria-label={label} class="flex items-center text-xs tracking-[0.15em]">
+<div role="group" aria-label={label} class="flex items-center text-xs tracking-[0.15em]">
   {
     languages.map((l, i) => (
       <>
-        {i > 0 && <span class="px-2 text-base-600" aria-hidden="true">|</span>}
+        {i > 0 && <span class="text-base-600" aria-hidden="true">/</span>}
         <a
           href={path(l, slug)}
+          hreflang={l}
+          lang={l}
           aria-current={l === lang ? 'page' : undefined}
-          class={`inline-block px-1 py-2 uppercase transition-colors ${
+          class={`px-1.5 py-2 uppercase transition-colors ${
             l === lang ? 'text-accent' : 'text-ink-muted hover:text-ink'
           }`}
         >
@@ -27,4 +29,4 @@ const { lang, slug, label } = Astro.props;
       </>
     ))
   }
-</nav>
+</div>

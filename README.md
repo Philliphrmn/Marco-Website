@@ -1,132 +1,94 @@
 # Marco Herrmann - Website
 
-Persönliche Website von Marco Herrmann. Statisch, zweisprachig (Deutsch/Englisch),
-ohne Cookies, Tracking oder Formulare.
+Kleine persönliche Website von Marco Herrmann, gedacht als Ziel für den
+QR-Code auf der Visitenkarte. Eine einzige Seite zum Runterscrollen,
+zweisprachig (Deutsch/Englisch), ohne Cookies, Tracking oder Formulare.
 
-## Wie starte ich die Seite?
+Aufbau der Seite: Titelbild → Über mich → Werkstatt → Automobile →
+Immobilien → Facility Management → Kontakt. Die Menüpunkte springen zum
+jeweiligen Abschnitt. Impressum und Datenschutz sind eigene Unterseiten.
 
-Einmalig die Programme installieren:
+## Starten
+
+Einmalig installieren:
 
 ```sh
 npm install
 ```
 
-Danach die Seite lokal starten, zum Ausprobieren und Ansehen im Browser:
+Lokal starten:
 
 ```sh
 npm run dev
 ```
 
-Der Befehl gibt eine Adresse aus, meist `http://localhost:4321`. Diese Adresse
-im Browser öffnen. Solange der Befehl läuft, werden Änderungen an Texten oder
-Bildern sofort im Browser sichtbar (einfach neu laden). Zum Beenden im
-Terminal `Strg + C` drücken.
+Dann `http://localhost:4321` im Browser öffnen. Änderungen an Texten oder
+Bildern erscheinen nach dem Speichern sofort. Beenden mit `Strg + C`.
 
-## Wie ändere ich Texte?
+## Texte ändern
 
-Alle Texte liegen gesammelt in zwei Dateien, keine Programmierkenntnisse
-nötig:
+Alle Texte stehen in zwei Dateien mit gleichem Aufbau:
 
-- `src/content/de.json` - alle deutschen Texte
-- `src/content/en.json` - alle englischen Texte
+- `src/content/de.json` - Deutsch
+- `src/content/en.json` - Englisch
 
-Beide Dateien haben den gleichen Aufbau. Jeder Text steht hinter einem
-Bezeichner in Anführungszeichen, zum Beispiel:
+Nur den Text zwischen den Anführungszeichen nach dem Doppelpunkt ändern.
+Anführungszeichen und Kommas am Zeilenende stehen lassen. Ein `"` innerhalb
+eines Textes wird als `\"` geschrieben.
 
-```json
-"tagline": "Kfz-Betrieb, Automobile, Immobilien und Facility Management - Oberfranken."
-```
+Die vier Bereiche (Werkstatt, Automobile, Immobilien, Facility) stehen unter
+`"sections"`. Jeder Bereich hat einen Menünamen (`label`), eine Überschrift,
+einen kurzen Text und drei Stichworte (`tags`).
 
-Um den Text zu ändern, einfach das, was zwischen den Anführungszeichen nach
-dem Doppelpunkt steht, ersetzen. Wichtig:
+## Kontaktdaten ändern
 
-- Die Anführungszeichen `"..."` müssen erhalten bleiben.
-- Ein Komma am Zeilenende nicht löschen (außer es ist die letzte Zeile in
-  einem Block).
-- Sonderzeichen wie `"` innerhalb eines Textes müssen mit einem Backslash
-  geschrieben werden, also `\"`.
+Telefon, WhatsApp, E-Mail, LinkedIn und Adresse stehen zentral in
+`src/content/site-config.ts`. Von dort werden sie automatisch für die
+Kontakt-Buttons, das Impressum und die Visitenkarte zum Speichern
+(`/marco-herrmann.vcf`) verwendet.
 
-Am besten die Datei in einem einfachen Texteditor öffnen (z.B. dem in
-VS Code oder TextEdit im Klartext-Modus).
+## Bilder austauschen
 
-## Wie tausche ich Bilder aus?
+Die Bilder liegen in `src/assets/images/`:
 
-Eine vollständige Checkliste mit allen Bildern, Ziel-Dateinamen und
-empfohlenen Formaten steht in **`BILDER.md`** im Projekt-Root. Kurzfassung:
+| Datei | Einsatz |
+|---|---|
+| `hero.jpg` | Titelbild (Hochformat) |
+| `portrait.jpg` | Über mich (Hochformat 4:5) |
+| `werkstatt.jpg` | Werkstatt (Querformat 4:3) |
+| `automobile.jpg` | Automobile (Querformat 4:3, Stockfoto Unsplash) |
+| `immobilien.jpg` | Immobilien (Querformat 4:3, Stockfoto Unsplash) |
+| `facility.jpg` | Facility Management (Querformat 4:3) |
 
-1. Eigenes Foto exportieren (Format/Mindestbreite siehe `BILDER.md`).
-2. Datei unter dem in `BILDER.md` genannten Namen in `public/images/`
-   ablegen.
-3. In `src/content/images.ts` die passende Zeile suchen und `src:` auf
-   `/images/<dateiname>` ändern.
+Zum Austauschen einfach eine neue Datei unter demselben Namen ablegen. Beim
+Build werden die Bilder automatisch verkleinert, in WebP umgewandelt und von
+Metadaten wie GPS-Daten befreit. Wenn ein Stockfoto durch ein eigenes ersetzt
+wird, den Bildnachweis im Impressum (`impressum.sections` in den JSON-Dateien)
+anpassen.
 
-Beispiel - vorher:
-
-```ts
-hero: {
-  src: 'https://images.unsplash.com/photo-...',
-  width: 1920,
-  height: 1280,
-},
-```
-
-Nachher (eigenes Bild `hero-marco-herrmann.jpg` liegt in `public/images/`):
-
-```ts
-hero: {
-  src: '/images/hero-marco-herrmann.jpg',
-  width: 1920,
-  height: 1280,
-},
-```
-
-`width`/`height` können auf die tatsächlichen Maße des eigenen Fotos
-angepasst werden, müssen es aber nicht exakt - sie dienen nur dazu, dass die
-Seite beim Laden nicht wackelt.
-
-## Wie ändere ich Kontaktdaten?
-
-Telefonnummer, E-Mail und LinkedIn-Link stehen zentral in
-`src/content/site-config.ts`. Werte, die noch mit `{{...}}` geschrieben sind
-(z.B. `{{TELEFON_ABSCHLEPP}}`), sind noch offene Platzhalter - diese werden
-auf der Seite automatisch sichtbar als „noch nicht hinterlegt" markiert.
-Sobald ein echter Wert eingetragen wird, erscheint automatisch ein normaler,
-klickbarer Button.
-
-## Wie veröffentliche ich (deploye) die Seite?
-
-Die Seite ist rein statisch - kein Server, keine Datenbank nötig. Für den
-Live-Betrieb erst den fertigen Ordner bauen:
+## Veröffentlichen
 
 ```sh
 npm run build
 ```
 
-Das Ergebnis liegt danach im Ordner `dist/`. Diesen Ordner bei einem
-Static-Hosting-Anbieter hochladen, zum Beispiel:
+Der fertige Ordner `dist/` kann bei jedem Static-Hosting-Anbieter
+hochgeladen werden, etwa Netlify, Vercel oder GitHub Pages (Build-Befehl
+`npm run build`, Ausgabe-Ordner `dist`). Vorher in `astro.config.mjs` bei
+`site` die echte Domain eintragen.
 
-- **Netlify** oder **Vercel**: Projekt-Ordner per GitHub verbinden oder den
-  `dist/`-Ordner direkt per Drag & Drop hochladen. Build-Befehl: `npm run
-  build`, Ausgabe-Ordner: `dist`.
-- **GitHub Pages**: Inhalt von `dist/` in den entsprechenden Branch pushen.
-
-Vor dem Veröffentlichen einmal `npm run build` lokal ausführen und prüfen,
-dass keine Fehler auftreten.
-
-## Projektstruktur (kurz)
+## Projektstruktur
 
 ```
 src/
+├── assets/images/        ← die 6 Bilder der Seite
+├── components/           ← Abschnitte (Hero, About, FieldSection, Contact, …)
 ├── content/
-│   ├── de.json, en.json     ← alle Texte
-│   ├── images.ts            ← alle Bildpfade
-│   └── site-config.ts       ← Kontaktdaten/Platzhalter
-├── components/               ← Bausteine der Seiten
-├── layouts/Layout.astro      ← Grundgerüst jeder Seite
+│   ├── de.json, en.json  ← alle Texte
+│   ├── images.ts         ← Zuordnung Bild → Abschnitt
+│   └── site-config.ts    ← Kontaktdaten und Adresse
+├── layouts/Layout.astro  ← Grundgerüst (Header, Footer, Schriften)
 └── pages/
-    ├── de/                   ← deutsche Seiten (/de/...)
-    └── en/                   ← englische Seiten (/en/...)
-
-public/images/                ← eigene Fotos kommen hierhin
-BILDER.md                     ← Bilder-Checkliste
+    ├── de/, en/          ← Startseite, Impressum, Datenschutz je Sprache
+    └── marco-herrmann.vcf.ts ← Visitenkarte zum Speichern
 ```

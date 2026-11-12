@@ -1,6 +1,7 @@
 ---
 import { Menu, X } from '@lucide/astro';
 import { getContent, path, type Lang } from '../i18n/utils';
+import { siteConfig } from '../content/site-config';
 import LanguageSwitcher from './LanguageSwitcher.astro';
 
 interface Props {
@@ -10,27 +11,33 @@ interface Props {
 
 const { lang, slug } = Astro.props;
 const content = getContent(lang);
-const home = path(lang);
+const isHome = slug === '';
+
+// Auf der Startseite reine Sprungmarken, auf Unterseiten zurück zur Startseite.
+const anchor = (id: string) => (isHome ? `#${id}` : `${path(lang)}#${id}`);
+const links = [
+  { id: 'ueber-mich', label: content.nav.about },
+  ...content.sections.map((s) => ({ id: s.id, label: s.label })),
+  { id: 'kontakt', label: content.nav.contact },
+];
 ---
 
-<header class="sticky top-0 z-40 border-b border-base-800 bg-base-950/95 backdrop-blur">
-  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-5 sm:px-8">
+<header class="sticky top-0 z-40 border-b border-base-800/80 bg-base-950/90 backdrop-blur">
+  <div class="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between gap-6 px-5 sm:px-8">
     <a
-      href={home}
-      class="font-serif text-sm uppercase tracking-[0.28em] text-ink transition-colors hover:text-accent sm:text-base"
+      href={isHome ? '#top' : path(lang)}
+      class="font-serif text-sm uppercase tracking-[0.28em] text-ink transition-colors hover:text-accent"
     >
-      {content.meta.siteName}
+      {siteConfig.name}
     </a>
 
-    <nav aria-label="Hauptnavigation" class="hidden items-center gap-8 md:flex">
+    <nav aria-label={content.a11y.mainNav} class="hidden items-center gap-7 lg:flex">
       {
-        content.nav.links.map((link) => (
+        links.map((link) => (
           <a
-            href={path(lang, link.key)}
-            aria-current={slug === link.key ? 'page' : undefined}
-            class={`text-sm tracking-wide transition-colors ${
-              slug === link.key ? 'text-accent' : 'text-ink-muted hover:text-ink'
-            }`}
+            href={anchor(link.id)}
+            data-nav-link={link.id}
+            class="text-sm text-ink-muted transition-colors hover:text-ink data-active:text-accent"
           >
             {link.label}
           </a>
@@ -39,17 +46,16 @@ const home = path(lang);
       <LanguageSwitcher lang={lang} slug={slug} label={content.a11y.languageSwitch} />
     </nav>
 
-    <div class="flex items-center gap-4 md:hidden">
+    <div class="flex items-center gap-3 lg:hidden">
       <LanguageSwitcher lang={lang} slug={slug} label={content.a11y.languageSwitch} />
       <button
-        id="menu-toggle"
+        id="menu-open"
         type="button"
         aria-expanded="false"
         aria-controls="mobile-menu"
         class="inline-flex h-10 w-10 items-center justify-center text-ink"
       >
-        <Menu id="menu-icon-open" class="h-6 w-6" aria-hidden="true" />
-        <X id="menu-icon-close" class="hidden h-6 w-6" aria-hidden="true" />
+        <Menu class="h-6 w-6" aria-hidden="true" />
         <span class="sr-only">{content.a11y.openMenu}</span>
       </button>
     </div>
@@ -57,41 +63,27 @@ const home = path(lang);
 </header>
 
 <!--
-  Bewusst außerhalb von <header>: der Header hat backdrop-blur (CSS filter),
-  was ihn zum Containing Block für position:fixed-Kinder machen würde -
-  das Overlay würde dann nur auf Header-Höhe begrenzt statt den ganzen
-  Bildschirm zu füllen.
+  Bewusst außerhalb von <header>: backdrop-blur macht den Header zum
+  Containing Block für position:fixed - das Overlay wäre sonst nur so hoch
+  wie der Header.
 -->
 <div
   id="mobile-menu"
   role="dialog"
   aria-modal="true"
-  aria-label={content.a11y.openMenu}
-  class="fixed inset-0 z-50 hidden bg-base-950"
+  aria-label={content.a11y.mainNav}
+  class="fixed inset-0 z-50 hidden flex-col bg-base-950 lg:hidden"
 >
-  <div class="flex items-center justify-between px-5 py-5 sm:px-8">
-    <a href={home} class="font-serif text-sm uppercase tracking-[0.28em] text-ink sm:text-base">
-      {content.meta.siteName}
-    </a>
-    <button
-      id="menu-close"
-      type="button"
-      class="inline-flex h-10 w-10 items-center justify-center text-ink"
-    >
+  <div class="flex h-[4.5rem] items-center justify-end px-5 sm:px-8">
+    <button id="menu-close" type="button" class="inline-flex h-10 w-10 items-center justify-center text-ink">
       <X class="h-6 w-6" aria-hidden="true" />
       <span class="sr-only">{content.a11y.closeMenu}</span>
     </button>
   </div>
-  <nav aria-label="Hauptnavigation" class="mt-10 flex flex-col items-center gap-8 px-5">
+  <nav aria-label={content.a11y.mainNav} class="flex flex-1 flex-col items-center justify-center gap-7 pb-16">
     {
-      content.nav.links.map((link) => (
-        <a
-          href={path(lang, link.key)}
-          aria-current={slug === link.key ? 'page' : undefined}
-          class={`font-serif text-2xl transition-colors ${
-            slug === link.key ? 'text-accent' : 'text-ink hover:text-accent'
-          }`}
-        >
+      links.map((link) => (
+        <a href={anchor(link.id)} class="font-serif text-2xl text-ink transition-colors hover:text-accent">
           {link.label}
         </a>
       ))
@@ -100,33 +92,54 @@ const home = path(lang);
 </div>
 
 <script>
-  const toggle = document.getElementById('menu-toggle');
-  const closeBtn = document.getElementById('menu-close');
-  const menu = document.getElementById('mobile-menu');
-  const iconOpen = document.getElementById('menu-icon-open');
-  const iconClose = document.getElementById('menu-icon-close');
+  const menu = document.getElementById('mobile-menu')!;
+  const openBtn = document.getElementById('menu-open')!;
+  const closeBtn = document.getElementById('menu-close')!;
 
-  function openMenu() {
-    menu?.classList.remove('hidden');
-    iconOpen?.classList.add('hidden');
-    iconClose?.classList.remove('hidden');
-    toggle?.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
-    closeBtn?.focus();
+  function setMenu(open: boolean) {
+    menu.classList.toggle('hidden', !open);
+    menu.classList.toggle('flex', open);
+    openBtn.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
   }
 
-  function closeMenu() {
-    menu?.classList.add('hidden');
-    iconOpen?.classList.remove('hidden');
-    iconClose?.classList.add('hidden');
-    toggle?.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-    toggle?.focus();
-  }
-
-  toggle?.addEventListener('click', openMenu);
-  closeBtn?.addEventListener('click', closeMenu);
-  menu?.addEventListener('keydown', (event) => {
-    if (event instanceof KeyboardEvent && event.key === 'Escape') closeMenu();
+  openBtn.addEventListener('click', () => {
+    setMenu(true);
+    closeBtn.focus();
   });
+  closeBtn.addEventListener('click', () => {
+    setMenu(false);
+    openBtn.focus();
+  });
+  menu.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      setMenu(false);
+      openBtn.focus();
+    }
+  });
+  // Ein Klick auf einen Menüpunkt schließt das Menü, der Browser springt dann zur Sektion.
+  menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+
+  // Aktive Sektion in der Desktop-Navigation hervorheben.
+  const navLinks = document.querySelectorAll<HTMLElement>('[data-nav-link]');
+  // Der Hero (#top) wird mitbeobachtet, damit oben keine Sektion markiert ist.
+  const sections = ['top', ...[...navLinks].map((link) => link.dataset.navLink!)]
+    .map((id) => document.getElementById(id))
+    .filter((el): el is HTMLElement => el !== null);
+
+  if (sections.length && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          navLinks.forEach((link) => {
+            link.toggleAttribute('data-active', link.dataset.navLink === entry.target.id);
+          });
+        }
+      },
+      // Eine Sektion gilt als aktiv, sobald sie die Bildschirmmitte erreicht.
+      { rootMargin: '-50% 0px -50% 0px' },
+    );
+    sections.forEach((section) => observer.observe(section));
+  }
 </script>

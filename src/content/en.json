@@ -1,270 +1,81 @@
 {
   "meta": {
-    "siteName": "Marco Herrmann",
-    "homeTitle": "Marco Herrmann - Vehicle Workshop, Automobiles, Real Estate, Facility Management",
-    "homeDescription": "Personal site of Marco Herrmann: vehicle workshop, automobiles, real estate and facility management in Upper Franconia, Germany."
+    "title": "Marco Herrmann - Master Technician and Entrepreneur",
+    "description": "Marco Herrmann, master automotive technician and entrepreneur from Upper Franconia, Germany: workshop, automobiles, real estate and facility management."
   },
   "a11y": {
     "skipToContent": "Skip to content",
+    "mainNav": "Main navigation",
+    "legalNav": "Legal",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
-    "languageSwitch": "Switch language",
-    "closeImage": "Close image"
+    "languageSwitch": "Switch language"
   },
   "nav": {
-    "links": [
-      { "key": "werkstatt", "label": "Workshop" },
-      { "key": "automobile", "label": "Automobiles" },
-      { "key": "immobilien", "label": "Real Estate" },
-      { "key": "facility", "label": "Facility Management" }
-    ]
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "eyebrow": "Master technician · Entrepreneur",
+    "tagline": "Workshop, automobiles, real estate and facility management in Upper Franconia, Germany.",
+    "ctaContact": "Contact",
+    "ctaCall": "Call",
+    "imageAlt": "Mercedes-AMG GT Black Series in a dark studio setting"
+  },
+  "about": {
+    "heading": "About",
+    "paragraphs": [
+      "Born in 1977, master automotive technician. At 21 I took over my family's business and over 25 years built it into a regional mobility and transport company, which I sold in 2023.",
+      "What has stayed is an interest in things with substance: vehicles, buildings, businesses. Today I work across four fields."
+    ],
+    "imageAlt": "Portrait of Marco Herrmann"
+  },
+  "sections": [
+    {
+      "id": "werkstatt",
+      "label": "Workshop",
+      "heading": "Mercedes-Benz and sports cars in good hands.",
+      "text": "An independent workshop in Zedwitz: maintenance, repair and detailing with a focus on Mercedes-Benz and sports cars. Plus a towing service that is available around the clock.",
+      "tags": ["Maintenance & repair", "Detailing", "Towing 24/7"],
+      "imageAlt": "Workshop hall with several Mercedes-AMG cars"
+    },
+    {
+      "id": "automobile",
+      "label": "Automobiles",
+      "heading": "What is a profession in the workshop is a passion here.",
+      "text": "A private collection of classic Mercedes-Benz, restorations down to the last detail and, now and then, the trade of special vehicles.",
+      "tags": ["Collection", "Restoration", "Trade"],
+      "imageAlt": "Covered car in a dark hall"
+    },
+    {
+      "id": "immobilien",
+      "label": "Real Estate",
+      "heading": "Buying, renovating, building.",
+      "text": "Commercial properties in Upper Franconia, plus apartments and houses in Austria and Portugal - partly for my own use, partly for rent.",
+      "tags": ["Germany", "Austria", "Portugal"],
+      "imageAlt": "Neoclassical period facade in evening light"
+    },
+    {
+      "id": "facility",
+      "label": "Facility",
+      "heading": "Facility management, all year round.",
+      "text": "Winter service, grounds maintenance and cleaning for commercial properties, residential complexes and property managers in Upper Franconia.",
+      "tags": ["Winter service", "Grounds", "Cleaning"],
+      "imageAlt": "Wheel loader with snow plough on winter service"
+    }
+  ],
+  "contact": {
+    "heading": "Contact",
+    "text": "If any of this is of interest, just get in touch. The quickest way to reach me is by phone or WhatsApp.",
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "saveContact": "Save contact"
   },
   "footer": {
-    "contactHeading": "Contact",
-    "phoneLabel": "Call",
-    "whatsappLabel": "WhatsApp",
-    "emailLabel": "Email",
-    "linkedinLabel": "LinkedIn",
-    "placeholderNote": "not yet available",
     "impressum": "Legal Notice",
     "datenschutz": "Privacy Policy"
-  },
-  "home": {
-    "hero": {
-      "name": "MARCO HERRMANN",
-      "tagline": "Vehicle workshop, automobiles, real estate and facility management - Upper Franconia.",
-      "imageAlt": "Mercedes-AMG GT Black Series in a dark studio setting"
-    },
-    "about": {
-      "heading": "About",
-      "paragraphs": [
-        "Born in 1977, trained as a master automotive technician. At 21, I took over my family's business - and over the following 25 years built it into a regional mobility and transport company, which I sold in 2023. That period shaped my entrepreneurial thinking more than anything before it.",
-        "What has stayed with me is what has always interested me: things with substance. Vehicles, buildings, businesses. Today I work across four fields - a vehicle workshop focused on Mercedes-Benz and sports cars, the restoration and trade of collector cars, the renovation of my own properties in Germany, Austria and Portugal, and a facility management business.",
-        "If any of this is of interest - feel free to get in touch."
-      ],
-      "imageAlt": "Portrait of Marco Herrmann"
-    },
-    "tiles": {
-      "heading": "Areas of Work",
-      "items": [
-        {
-          "key": "werkstatt",
-          "title": "Vehicle Service",
-          "text": "Maintenance, repair and detailing with a focus on Mercedes-Benz. Towing service around the clock.",
-          "href": "werkstatt",
-          "imageAlt": "Vehicles inside the workshop"
-        },
-        {
-          "key": "automobile",
-          "title": "Automobiles",
-          "text": "Restored classics and select collector cars - a personal passion of mine.",
-          "href": "automobile",
-          "imageAlt": "Detail shot of a collector car"
-        },
-        {
-          "key": "immobilien",
-          "title": "Real Estate",
-          "text": "Six properties across Germany, Austria and Portugal, renovated and built.",
-          "href": "immobilien",
-          "imageAlt": "Facade of a renovated townhouse"
-        },
-        {
-          "key": "facility",
-          "title": "Facility Management",
-          "text": "Winter service, grounds maintenance and cleaning for commercial and residential properties.",
-          "href": "facility",
-          "imageAlt": "Grounds maintenance in action"
-        }
-      ]
-    }
-  },
-  "werkstatt": {
-    "meta": {
-      "title": "Workshop - Marco Herrmann",
-      "description": "Independent vehicle workshop focused on Mercedes-Benz and sports cars in Zedwitz, Upper Franconia. Maintenance, repair, detailing and towing service around the clock."
-    },
-    "intro": {
-      "heading": "Workshop",
-      "text": "Independent vehicle workshop with a focus on Mercedes-Benz and sports cars."
-    },
-    "services": {
-      "heading": "Services",
-      "items": [
-        {
-          "key": "wartung",
-          "title": "Maintenance & Inspection",
-          "text": "Regular maintenance to manufacturer specification, inspection and diagnostics - for Mercedes-Benz and other makes alike."
-        },
-        {
-          "key": "reparatur",
-          "title": "Repair & Servicing",
-          "text": "From minor repairs to larger servicing work - done properly and with an eye for detail."
-        },
-        {
-          "key": "aufbereitung",
-          "title": "Detailing & Care",
-          "text": "Interior and exterior detailing, so your car looks the way it did on day one."
-        },
-        {
-          "key": "abschleppdienst",
-          "title": "Towing Service",
-          "text": "Breakdown assistance and towing, available around the clock."
-        }
-      ]
-    },
-    "towing": {
-      "heading": "Towing Service",
-      "text": "Available 24 hours a day, 7 days a week.",
-      "callLabel": "Call now"
-    },
-    "gallery": {
-      "heading": "Inside the Workshop",
-      "items": [
-        { "key": "werkstatt_halle", "alt": "Workshop hall with several vehicles" },
-        { "key": "werkstatt_hebebuehne", "alt": "Vehicle on the hydraulic lift" },
-        { "key": "werkstatt_detail", "alt": "Detail shot from the workshop" }
-      ]
-    },
-    "location": {
-      "heading": "Location",
-      "addressLines": ["Hofer Str. 45", "95183 Zedwitz"],
-      "imageAlt": "Business premises of the workshop"
-    }
-  },
-  "automobile": {
-    "meta": {
-      "title": "Automobiles - Marco Herrmann",
-      "description": "A private collection of classic Mercedes-Benz cars and occasional trading in special vehicles."
-    },
-    "intro": {
-      "heading": "Automobiles",
-      "text": "What is a profession in the workshop is a passion here."
-    },
-    "collection": {
-      "heading": "Private Collection",
-      "text": "I've been collecting and maintaining classic Mercedes-Benz cars for many years - kept in a hall of my own, cared for myself, and preserved as close to original condition as possible.",
-      "coverAlt": "Vehicle under a cover in a dim hall"
-    },
-    "restoration": {
-      "heading": "Restoration",
-      "text": "When it's needed, I go down to the last detail: suspension, axles and engine are fully stripped, reconditioned and rebuilt by hand - true for any vehicle, but especially for classics.",
-      "items": [
-        { "key": "automobile_restaurierung_fahrwerk", "alt": "Freshly rebuilt chassis with new axles and suspension" },
-        { "key": "automobile_restaurierung_motor", "alt": "Reconditioned engine on the engine stand" },
-        { "key": "automobile_restaurierung_einbau", "alt": "Engine and axle assembly being installed" },
-        { "key": "automobile_restaurierung_detail", "alt": "Brake and hub assembly in close-up during reassembly" }
-      ]
-    },
-    "trade": {
-      "heading": "Vehicle Trading",
-      "text": "Alongside the private collection, I occasionally trade select vehicles too - from everyday cars to exotics. Pickup, inspection and handover I handle myself.",
-      "items": [
-        { "key": "automobile_sls", "alt": "Mercedes-AMG SLS being transported on a trailer" },
-        { "key": "automobile_gt2rs", "alt": "Porsche 911 GT2 RS - example of trading in special vehicles" }
-      ]
-    },
-    "outro": "Now and then I part with a car, or I'm looking for one. If that's of interest, just give me a call."
-  },
-  "immobilien": {
-    "meta": {
-      "title": "Real Estate - Marco Herrmann",
-      "description": "Six property projects across Germany, Austria and Portugal - renovated and built."
-    },
-    "intro": {
-      "heading": "Real Estate",
-      "text": "For many years I have been buying, renovating and building properties - some for my own use, some to let. Six projects that mean the most to me.",
-      "coverAlt": "Panoramic view of a commercial hall in Upper Franconia"
-    },
-    "items": [
-      {
-        "key": "betriebsgebaeude",
-        "title": "Business Premises, Upper Franconia",
-        "text": "A silver-clad hall with office and workshop space, also serving as the home address. Home of the vehicle workshop.",
-        "imageAlt": "Silver-clad business premises"
-      },
-      {
-        "key": "gewerbehalle",
-        "title": "Commercial Hall, Upper Franconia",
-        "text": "A larger hall with a white facade, let for several years.",
-        "imageAlt": "Commercial hall with white facade"
-      },
-      {
-        "key": "hohensaas",
-        "title": "Former Car Rental Station, Upper Franconia",
-        "text": "A red-and-white building, formerly a car rental station. Today a let commercial unit.",
-        "imageAlt": "Former car rental building, red and white"
-      },
-      {
-        "key": "porto",
-        "title": "Holiday Home, Porto",
-        "text": "A house right on the beach, for the family's own use.",
-        "imageAlt": "Holiday home on the beach in Porto"
-      },
-      {
-        "key": "schleizer",
-        "title": "Converted Petrol Station, Upper Franconia",
-        "text": "A former petrol station, converted into a commercial property. Previously let as a car dealership, today home to a kitchen showroom.",
-        "imageAlt": "Converted former petrol station"
-      },
-      {
-        "key": "wien",
-        "title": "Period Apartment, Vienna",
-        "text": "Late Wilhelminian style, circa 1900. A joint project with my son: full renovation with new windows, entirely renewed wiring, plumbing and heating, parquet flooring, a new kitchen, new bathroom and indirect lighting.",
-        "imageAlt": "Renovated period apartment in Vienna"
-      }
-    ]
-  },
-  "facility": {
-    "meta": {
-      "title": "Facility Management - Marco Herrmann",
-      "description": "Facility management for commercial properties, residential complexes and property management companies in Upper Franconia."
-    },
-    "intro": {
-      "heading": "Facility Management",
-      "text": "Facility management for commercial properties, residential complexes and property management companies in Upper Franconia, currently operating under {{FM}}."
-    },
-    "services": {
-      "heading": "Services",
-      "items": [
-        {
-          "key": "winterdienst",
-          "title": "Winter Service",
-          "text": "Snow clearing and gritting for commercial premises and residential complexes, reliable even in the early morning hours."
-        },
-        {
-          "key": "gruenflaechen",
-          "title": "Grounds Maintenance",
-          "text": "Lawn care, hedge trimming and upkeep of outdoor areas, all year round."
-        },
-        {
-          "key": "kehrmaschine",
-          "title": "Sweeping & Surface Cleaning",
-          "text": "Machine cleaning of paths, courtyards and parking areas."
-        },
-        {
-          "key": "gebaeudereinigung",
-          "title": "Building Cleaning",
-          "text": "Stairwell and routine cleaning for residential and commercial properties."
-        },
-        {
-          "key": "weitere",
-          "isPlaceholder": true,
-          "title": "Additional service coming soon",
-          "text": ""
-        }
-      ]
-    },
-    "gallery": {
-      "heading": "Fleet & Equipment",
-      "items": [
-        { "key": "facility_fuhrpark", "alt": "Fleet vehicles for facility work" },
-        { "key": "facility_kehrmaschine", "alt": "Sweeper in action" },
-        { "key": "facility_maeharbeiten", "alt": "Ride-on mower during grounds maintenance" },
-        { "key": "facility_gruenpflege", "alt": "Wheel loader clearing green waste" },
-        { "key": "facility_winterdienst", "alt": "Wheel loader with snow blade during winter service" },
-        { "key": "facility_transport", "alt": "Vehicle transport with trailer" }
-      ]
-    }
   },
   "impressum": {
     "meta": {
@@ -273,14 +84,22 @@
     },
     "heading": "Legal Notice",
     "angabenHeading": "Information pursuant to Section 5 DDG",
-    "name": "Marco Herrmann",
-    "addressLines": ["Hofer Str. 45", "95183 Zedwitz"],
     "phoneLabel": "Phone",
     "emailLabel": "Email",
-    "haftungInhalteHeading": "Liability for Content",
-    "haftungInhalteText": "As a service provider, I am responsible for my own content on these pages in accordance with general law under Section 7 (1) DDG. However, under Sections 8 to 10 DDG, I am not obliged as a service provider to monitor transmitted or stored third-party information or to investigate circumstances indicating unlawful activity. Obligations to remove or block the use of information under general law remain unaffected. However, liability in this regard is only possible from the point in time at which a specific infringement becomes known. Upon becoming aware of any such infringements, I will remove the relevant content immediately.",
-    "haftungLinksHeading": "Liability for Links",
-    "haftungLinksText": "This site contains links to external third-party websites over whose content I have no control. I therefore cannot accept any liability for this external content. The respective provider or operator of the linked pages is always responsible for their content. The linked pages were checked for possible legal violations at the time of linking. No unlawful content was identifiable at that time. Continuous monitoring of the content of linked pages is not reasonable without concrete evidence of a violation. Upon becoming aware of any infringements, I will remove such links immediately."
+    "sections": [
+      {
+        "heading": "Liability for Content",
+        "text": "As a service provider, I am responsible for my own content on these pages in accordance with general law under Section 7 (1) DDG. However, under Sections 8 to 10 DDG, I am not obliged as a service provider to monitor transmitted or stored third-party information or to investigate circumstances indicating unlawful activity. Obligations to remove or block the use of information under general law remain unaffected. However, liability in this regard is only possible from the point in time at which a specific infringement becomes known. Upon becoming aware of any such infringements, I will remove the relevant content immediately."
+      },
+      {
+        "heading": "Liability for Links",
+        "text": "This site contains links to external third-party websites over whose content I have no control. I therefore cannot accept any liability for this external content. The respective provider or operator of the linked pages is always responsible for their content. The linked pages were checked for possible legal violations at the time of linking. No unlawful content was identifiable at that time. Continuous monitoring of the content of linked pages is not reasonable without concrete evidence of a violation. Upon becoming aware of any infringements, I will remove such links immediately."
+      },
+      {
+        "heading": "Image Credits",
+        "text": "The photos in the Automobiles and Real Estate sections are from Unsplash (unsplash.com) and are used under the Unsplash License. All other photos are my own."
+      }
+    ]
   },
   "datenschutz": {
     "meta": {
@@ -299,8 +118,8 @@
         "text": "This website does not use cookies or any analytics or tracking tools. Your usage behaviour is not evaluated in any way."
       },
       {
-        "heading": "Fonts",
-        "text": "The fonts used on this website are hosted locally (self-hosted). No connection is made to Google Fonts or any other external font service."
+        "heading": "Fonts and Images",
+        "text": "Fonts and images are hosted locally on this website. No connection is made to Google Fonts, image services or any other external provider."
       },
       {
         "heading": "No Forms",

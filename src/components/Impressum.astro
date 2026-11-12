@@ -1,0 +1,28 @@
+---
+import LegalPage from './LegalPage.astro';
+import { getContent, type Lang } from '../i18n/utils';
+import { siteConfig } from '../content/site-config';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = getContent(lang).impressum;
+const { adresse } = siteConfig;
+---
+
+<LegalPage lang={lang} slug="impressum" meta={t.meta} heading={t.heading} sections={t.sections}>
+  <section>
+    <h2 class="font-serif text-xl text-ink">{t.angabenHeading}</h2>
+    <p class="mt-3">
+      {siteConfig.name}<br />
+      {adresse.strasse}<br />
+      {`${adresse.plz} ${adresse.ort}`}
+    </p>
+    <p class="mt-3">
+      {t.phoneLabel}: {siteConfig.telefon}<br />
+      {t.emailLabel}: {siteConfig.email}
+    </p>
+  </section>
+</LegalPage>

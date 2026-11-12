@@ -1,5 +1,8 @@
 ---
-import DatenschutzPage from '../../components/DatenschutzPage.astro';
+import LegalPage from '../../components/LegalPage.astro';
+import { getContent } from '../../i18n/utils';
+
+const t = getContent('de').datenschutz;
 ---
 
-<DatenschutzPage lang="de" />
+<LegalPage lang="de" slug="datenschutz" meta={t.meta} heading={t.heading} intro={t.intro} sections={t.sections} />

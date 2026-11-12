@@ -1,0 +1,29 @@
+---
+import { Image } from 'astro:assets';
+import { getContent, type Lang } from '../i18n/utils';
+import { images } from '../content/images';
+
+interface Props {
+  lang: Lang;
+}
+
+const t = getContent(Astro.props.lang).about;
+---
+
+<section id="ueber-mich" class="border-t border-base-800">
+  <div class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 sm:px-8 md:grid-cols-[2fr_3fr] md:gap-20 md:py-32">
+    <Image
+      src={images.portrait}
+      alt={t.imageAlt}
+      widths={[400, 640, 900]}
+      sizes="(min-width: 768px) 40vw, 100vw"
+      class="reveal aspect-[4/5] w-full max-w-sm rounded-sm object-cover"
+    />
+    <div class="reveal">
+      <h2 class="font-serif text-3xl text-ink sm:text-4xl">{t.heading}</h2>
+      <div class="mt-6 space-y-5 text-lg leading-relaxed text-ink-muted">
+        {t.paragraphs.map((p) => <p>{p}</p>)}
+      </div>
+    </div>
+  </div>
+</section>
