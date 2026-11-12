@@ -16,14 +16,14 @@ const { lang, slug, meta, heading, intro, sections } = Astro.props;
 
 <Layout lang={lang} slug={slug} title={meta.title} description={meta.description}>
   <article class="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-24">
-    <h1 class="font-serif text-4xl text-ink sm:text-5xl">{heading}</h1>
-    {intro && <p class="mt-6 text-lg text-ink-muted">{intro}</p>}
-    <div class="mt-10 space-y-10 leading-relaxed text-ink-muted">
+    <h1 class="font-serif text-4xl font-medium sm:text-5xl">{heading}</h1>
+    {intro && <p class="mt-6 text-lg text-ink-soft">{intro}</p>}
+    <div class="mt-10 space-y-10 leading-relaxed text-ink-soft">
       <slot />
       {
         sections.map((section) => (
           <section>
-            <h2 class="font-serif text-xl text-ink">{section.heading}</h2>
+            <h2 class="font-serif text-2xl font-medium">{section.heading}</h2>
             <p class="mt-3">{section.text}</p>
           </section>
         ))

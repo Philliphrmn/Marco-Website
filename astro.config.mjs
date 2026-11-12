@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  site: 'https://example.com',
+  site: 'https://marco-website-pi.vercel.app',
   i18n: {
     defaultLocale: 'de',
     locales: ['de', 'en'],

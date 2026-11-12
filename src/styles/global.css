@@ -1,42 +1,44 @@
 @import "tailwindcss";
 
+/*
+ * Farbwelt "Papier & Tinte": warmes Naturpapier, tiefes Tintenblau.
+ * Ein einziger Akzent (die Tinte selbst), alles andere über Helligkeit.
+ */
 @theme {
-  /* Warme, dunkle Neutraltöne */
-  --color-base-950: #14120f;
-  --color-base-900: #1b1815;
-  --color-base-800: #26221c;
-  --color-base-700: #39332a;
-  --color-base-600: #57503f;
+  --color-paper: #f4f1ea; /* Seitenhintergrund */
+  --color-card: #fcfbf7; /* Karten, warmes Weiß */
+  --color-stone: #e9e4da; /* helles, warmes Grau */
+  --color-line: #ddd6c8; /* Haarlinien */
+  --color-ink: #1e2a44; /* Text und Akzent */
+  --color-ink-soft: #5b6377; /* Sekundärtext */
+  --color-ink-faint: #8a8f9c; /* Hinweise, Labels */
 
-  --color-ink: #f3efe6;
-  --color-ink-muted: #b3a793;
-
-  /* Einziger Akzent: gedecktes Messing/Champagner */
-  --color-accent: #c2a05f;
-  --color-accent-dark: #a3844c;
-
-  --font-serif: "Playfair Display", "Iowan Old Style", Georgia, serif;
+  --font-serif: "EB Garamond", "Iowan Old Style", Georgia, serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --shadow-card:
+    0 1px 2px rgb(30 42 68 / 0.06), 0 12px 32px -10px rgb(30 42 68 / 0.18),
+    0 40px 80px -30px rgb(30 42 68 / 0.22);
 }
 
 html {
   scroll-behavior: smooth;
   /* Ankerziele nicht unter dem fixierten Header verstecken */
-  scroll-padding-top: 4.5rem;
+  scroll-padding-top: 4rem;
 }
 
 body {
-  background-color: var(--color-base-950);
+  background-color: var(--color-paper);
   color: var(--color-ink);
 }
 
 ::selection {
-  background-color: var(--color-accent);
-  color: var(--color-base-950);
+  background-color: var(--color-ink);
+  color: var(--color-paper);
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-ink);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -58,8 +60,8 @@ body {
  */
 .js .reveal {
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(14px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
 .js .reveal.is-visible {
   opacity: 1;

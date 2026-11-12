@@ -1,0 +1,369 @@
+---
+import QRCode from 'qrcode';
+import { ArrowDownRight, ChevronDown, MessageCircle, Phone, RotateCcw, UserPlus } from '@lucide/astro';
+import { getContent, path, type Lang } from '../i18n/utils';
+import { mailHref, siteConfig, telHref, whatsappHref } from '../content/site-config';
+import Monogram from './Monogram.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const { card: t, sections } = getContent(lang);
+const { adresse } = siteConfig;
+
+// QR-Code auf die Startseite in der jeweiligen Sprache, beim Build als SVG erzeugt.
+const siteUrl = new URL(path(lang), Astro.site).href;
+const qrSvg = await QRCode.toString(siteUrl, {
+  type: 'svg',
+  margin: 0,
+  errorCorrectionLevel: 'M',
+  color: { dark: '#1e2a44', light: '#0000' },
+});
+---
+
+<!--
+  Erster Bildschirm: nur die Visitenkarte, so groß wie möglich.
+  Vorderseite = Logo, Name, QR-Code. Rückseite = Kontakt und Sprunglinks
+  zu den vier Bereichen. Auf dem Handy hochkant, ab sm quer im echten
+  Format 85 × 55 mm. Alle Größen auf der Karte skalieren mit der
+  Kartenbreite (cqw).
+-->
+<section id="top" class="relative flex min-h-svh flex-col items-center justify-center gap-6 px-5 py-10">
+  <div class="card-scene">
+    <div id="card" class="card relative aspect-[55/85] sm:aspect-[85/55]" role="group" aria-label={t.label}>
+      <!-- Vorderseite -->
+      <div class="card-face card-front" data-face="front" role="button" tabindex="0" aria-label={t.flip}>
+        <Monogram class="front-logo" />
+        <h1 class="front-name font-serif font-medium">{siteConfig.name}</h1>
+        <div class="front-qr" role="img" aria-label={t.qrAlt} set:html={qrSvg} />
+      </div>
+
+      <!-- Rückseite -->
+      <div class="card-face card-back" data-face="back" inert>
+        <div class="back-head">
+          <Monogram class="back-logo shrink-0" />
+          <p class="back-name font-serif font-medium">{siteConfig.name}</p>
+          <button type="button" data-flip class="back-flip" aria-label={t.flipBack}>
+            <RotateCcw class="h-4 w-4" aria-hidden="true" />
+          </button>
+        </div>
+
+        <div class="back-body">
+          <dl class="back-details">
+            <div>
+              <dt class="card-label">{t.phone}</dt>
+              <dd><a href={telHref(siteConfig.telefon)} class="hover:underline">{siteConfig.telefon}</a></dd>
+            </div>
+            <div>
+              <dt class="card-label">{t.email}</dt>
+              <dd class="break-all sm:break-normal"><a href={mailHref(siteConfig.email)} class="hover:underline">{siteConfig.email}</a></dd>
+            </div>
+            <div>
+              <dt class="card-label">{t.address}</dt>
+              <dd>{adresse.strasse}, {`${adresse.plz} ${adresse.ort}`}</dd>
+            </div>
+          </dl>
+
+          <nav aria-label={t.fieldsLabel}>
+            <p class="card-label">{t.fieldsLabel}</p>
+            <ul class="back-fields">
+              {
+                sections.map((field) => (
+                  <li>
+                    <a href={`#${field.id}`} class="back-field-link">
+                      {field.label}
+                      <ArrowDownRight class="back-field-icon" aria-hidden="true" />
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </nav>
+        </div>
+
+        <div class="back-actions">
+          <a href={telHref(siteConfig.telefon)} class="card-action">
+            <Phone class="card-action-icon" aria-hidden="true" />{t.call}
+          </a>
+          <a href={whatsappHref(siteConfig.whatsapp)} target="_blank" rel="noopener noreferrer" class="card-action">
+            <MessageCircle class="card-action-icon" aria-hidden="true" />{t.whatsapp}
+          </a>
+          <a href="/marco-herrmann.vcf" download class="card-action">
+            <UserPlus class="card-action-icon" aria-hidden="true" />{t.save}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="text-xs text-ink-faint">{t.hint}</p>
+
+  <a
+    href="#ueber-mich"
+    class="absolute bottom-5 left-1/2 -translate-x-1/2 p-2 text-ink-faint transition-colors hover:text-ink"
+    aria-label={t.more}
+  >
+    <ChevronDown class="h-5 w-5" aria-hidden="true" />
+  </a>
+</section>
+
+<style>
+  /* Kartengröße: so groß wie der Bildschirm erlaubt, Platz für Hinweis darunter. */
+  .card-scene {
+    width: min(90vw, calc((100svh - 7rem) * 55 / 85));
+    perspective: 2000px;
+  }
+  @media (min-width: 40rem) {
+    .card-scene {
+      width: min(88vw, 54rem, calc((100svh - 8rem) * 85 / 55));
+    }
+  }
+
+  .card {
+    container-type: inline-size;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .card[data-flipped] {
+    transform: rotateY(180deg);
+  }
+  .card-face {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 7cqw;
+    border-radius: 1.6cqw;
+    /* Fast reines Weiß mit Haarlinie, damit sich die Karte vom beigen Grund abhebt. */
+    background: linear-gradient(160deg, #ffffff, #fefdfb);
+    border: 1px solid rgb(30 42 68 / 0.06);
+    box-shadow:
+      0 1px 2px rgb(30 42 68 / 0.08),
+      0 16px 40px -12px rgb(30 42 68 / 0.24),
+      0 48px 90px -36px rgb(30 42 68 / 0.28);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .card-back {
+    transform: rotateY(180deg);
+  }
+
+  /* --- Vorderseite (hochkant): Logo oben, Name, QR groß unten --- */
+  .card-front {
+    cursor: pointer;
+  }
+  :global(.front-logo) {
+    width: 22cqw;
+    height: 22cqw;
+  }
+  .front-name {
+    margin-top: auto;
+    font-size: 17cqw;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+  }
+  .front-qr {
+    align-self: flex-end;
+    width: 38cqw;
+    margin-top: 7cqw;
+  }
+  .front-qr :global(svg) {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* --- Rückseite (hochkant) --- */
+  .back-head {
+    display: flex;
+    align-items: center;
+    gap: 3.5cqw;
+    padding-bottom: 4.5cqw;
+    border-bottom: 1px solid var(--color-line);
+  }
+  :global(.back-logo) {
+    width: 11cqw;
+    height: 11cqw;
+  }
+  .back-name {
+    font-size: 7cqw;
+    line-height: 1.1;
+  }
+  .back-flip {
+    margin: -0.5rem -0.5rem -0.5rem auto;
+    padding: 0.5rem;
+    color: var(--color-ink-faint);
+    border-radius: 999px;
+    transition: color 0.2s;
+  }
+  .back-flip:hover {
+    color: var(--color-ink);
+  }
+  .back-body {
+    display: flex;
+    flex-direction: column;
+    gap: 6cqw;
+    margin-top: 6cqw;
+  }
+  .back-details {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5cqw;
+    font-size: max(0.875rem, 4.3cqw);
+  }
+  .card-label {
+    margin-bottom: 0.15rem;
+    font-size: max(0.625rem, 2.9cqw);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-ink-faint);
+  }
+  .back-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4cqw;
+  }
+  .back-field-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.25rem;
+    padding: 1.6cqw 0;
+    border-bottom: 1px solid var(--color-line);
+    font-family: var(--font-serif);
+    font-size: max(1rem, 5cqw);
+    transition: color 0.2s;
+  }
+  .back-field-link:hover {
+    color: var(--color-ink-soft);
+  }
+  .back-field-link :global(.back-field-icon) {
+    width: 1em;
+    height: 1em;
+    color: var(--color-ink-faint);
+  }
+  .back-actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: 4cqw;
+  }
+  .card-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 0;
+    border-radius: 0.375rem;
+    background-color: rgb(30 42 68 / 0.05);
+    font-size: max(0.75rem, 3.6cqw);
+    transition: background-color 0.2s;
+  }
+  .card-action:hover {
+    background-color: rgb(30 42 68 / 0.1);
+  }
+  .card-action :global(.card-action-icon) {
+    width: max(1rem, 5cqw);
+    height: max(1rem, 5cqw);
+  }
+
+  /* --- Querformat ab sm --- */
+  @media (min-width: 40rem) {
+    .card-face {
+      padding: 5.5cqw 6.5cqw;
+    }
+    /* Vorderseite: Logo oben links, Name groß zweizeilig unten links, QR unten rechts */
+    :global(.front-logo) {
+      width: 13cqw;
+      height: 13cqw;
+    }
+    .front-name {
+      max-width: 60%;
+      font-size: 10.5cqw;
+    }
+    .front-qr {
+      position: absolute;
+      right: 6.5cqw;
+      bottom: 5.5cqw;
+      width: 21cqw;
+      margin: 0;
+    }
+    /* Rückseite: Kontakt links, Bereiche rechts */
+    .back-head {
+      gap: 2.5cqw;
+      padding-bottom: 3cqw;
+    }
+    :global(.back-logo) {
+      width: 7cqw;
+      height: 7cqw;
+    }
+    .back-name {
+      font-size: 4cqw;
+    }
+    .back-body {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 6cqw;
+      margin-top: 4cqw;
+    }
+    .back-details {
+      gap: 2.2cqw;
+      font-size: max(0.875rem, 2.05cqw);
+    }
+    .card-label {
+      font-size: max(0.625rem, 1.4cqw);
+    }
+    .back-fields {
+      grid-template-columns: 1fr;
+    }
+    .back-field-link {
+      padding: 0.9cqw 0;
+      font-size: max(1rem, 2.7cqw);
+    }
+    .back-actions {
+      padding-top: 3cqw;
+    }
+    .card-action {
+      flex-direction: row;
+      justify-content: center;
+      font-size: max(0.75rem, 1.8cqw);
+    }
+    .card-action :global(.card-action-icon) {
+      width: max(1rem, 2.3cqw);
+      height: max(1rem, 2.3cqw);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  const card = document.getElementById('card')!;
+  const front = card.querySelector<HTMLElement>('[data-face="front"]')!;
+  const back = card.querySelector<HTMLElement>('[data-face="back"]')!;
+  const flipBack = back.querySelector<HTMLElement>('[data-flip]')!;
+
+  function setFlipped(flipped: boolean) {
+    card.toggleAttribute('data-flipped', flipped);
+    // Nur die sichtbare Seite ist für Tastatur und Screenreader erreichbar.
+    front.inert = flipped;
+    back.inert = !flipped;
+    (flipped ? flipBack : front).focus({ preventScroll: true });
+  }
+
+  front.addEventListener('click', () => setFlipped(true));
+  front.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      setFlipped(true);
+    }
+  });
+  flipBack.addEventListener('click', () => setFlipped(false));
+</script>

@@ -10,8 +10,8 @@ interface Props extends HTMLAttributes<'a'> {
 const { variant = 'secondary', external = false, class: className, ...attrs } = Astro.props;
 
 const variants = {
-  primary: 'border-accent bg-accent text-base-950 hover:border-accent-dark hover:bg-accent-dark',
-  secondary: 'border-base-600 text-ink hover:border-accent hover:text-accent',
+  primary: 'border-ink bg-ink text-paper hover:bg-ink/85',
+  secondary: 'border-ink/20 text-ink hover:border-ink',
 };
 ---
 
@@ -20,7 +20,7 @@ const variants = {
   target={external ? '_blank' : undefined}
   rel={external ? 'noopener noreferrer' : undefined}
   class:list={[
-    'inline-flex items-center gap-2.5 rounded-full border px-5 py-3 text-sm font-medium transition-colors',
+    'inline-flex items-center gap-2.5 rounded-full border px-5 py-3 text-sm transition-colors',
     variants[variant],
     className,
   ]}

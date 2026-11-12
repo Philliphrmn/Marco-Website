@@ -14,14 +14,14 @@ const { lang, slug, label } = Astro.props;
   {
     languages.map((l, i) => (
       <>
-        {i > 0 && <span class="text-base-600" aria-hidden="true">/</span>}
+        {i > 0 && <span class="text-line" aria-hidden="true">/</span>}
         <a
           href={path(l, slug)}
           hreflang={l}
           lang={l}
           aria-current={l === lang ? 'page' : undefined}
           class={`px-1.5 py-2 uppercase transition-colors ${
-            l === lang ? 'text-accent' : 'text-ink-muted hover:text-ink'
+            l === lang ? 'text-ink underline underline-offset-4' : 'text-ink-faint hover:text-ink'
           }`}
         >
           {l}

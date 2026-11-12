@@ -11,14 +11,13 @@
  *  - immobilien.jpg  Unsplash, photo-1788633227011-e4d0396cd052 (Unsplash-Lizenz, zugeschnitten)
  *  - alle übrigen: eigene Fotos
  */
-import hero from '../assets/images/hero.jpg';
 import portrait from '../assets/images/portrait.jpg';
 import werkstatt from '../assets/images/werkstatt.jpg';
 import automobile from '../assets/images/automobile.jpg';
 import immobilien from '../assets/images/immobilien.jpg';
 import facility from '../assets/images/facility.jpg';
 
-export const images = { hero, portrait };
+export const images = { portrait };
 
 /** Ein Bild pro Abschnitt, Schlüssel = `id` des Abschnitts in de.json/en.json. */
 export const sectionImages: Record<string, ImageMetadata> = {

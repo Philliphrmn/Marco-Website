@@ -1,8 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from './Hero.astro';
+import BusinessCard from './BusinessCard.astro';
 import About from './About.astro';
-import FieldSection from './FieldSection.astro';
+import Fields from './Fields.astro';
 import Contact from './Contact.astro';
 import { getContent, type Lang } from '../i18n/utils';
 
@@ -11,12 +11,12 @@ interface Props {
 }
 
 const { lang } = Astro.props;
-const content = getContent(lang);
+const { meta } = getContent(lang);
 ---
 
-<Layout lang={lang} slug="" title={content.meta.title} description={content.meta.description}>
-  <Hero lang={lang} />
+<Layout lang={lang} slug="" title={meta.title} description={meta.description}>
+  <BusinessCard lang={lang} />
   <About lang={lang} />
-  {content.sections.map((section, i) => <FieldSection {...section} index={i + 1} />)}
+  <Fields lang={lang} />
   <Contact lang={lang} />
 </Layout>

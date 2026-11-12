@@ -19,3 +19,7 @@ export const siteConfig = {
 export const telHref = (value: string) => `tel:${value.replace(/[^+\d]/g, '')}`;
 export const whatsappHref = (value: string) => `https://wa.me/${value.replace(/\D/g, '')}`;
 export const mailHref = (value: string) => `mailto:${value}`;
+
+const { strasse, plz, ort } = siteConfig.adresse;
+/** Öffnet die Adresse in Google Maps (auf dem Handy in der Karten-App). */
+export const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${strasse}, ${plz} ${ort}`)}`;

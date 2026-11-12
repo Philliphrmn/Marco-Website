@@ -4,7 +4,7 @@ Kleine persönliche Website von Marco Herrmann, gedacht als Ziel für den
 QR-Code auf der Visitenkarte. Eine einzige Seite zum Runterscrollen,
 zweisprachig (Deutsch/Englisch), ohne Cookies, Tracking oder Formulare.
 
-Aufbau der Seite: Titelbild → Über mich → Werkstatt → Automobile →
+Aufbau der Seite: digitale Visitenkarte (antippen zum Umdrehen) → Über mich → Werkstatt → Automobile →
 Immobilien → Facility Management → Kontakt. Die Menüpunkte springen zum
 jeweiligen Abschnitt. Impressum und Datenschutz sind eigene Unterseiten.
 
@@ -38,7 +38,7 @@ eines Textes wird als `\"` geschrieben.
 
 Die vier Bereiche (Werkstatt, Automobile, Immobilien, Facility) stehen unter
 `"sections"`. Jeder Bereich hat einen Menünamen (`label`), eine Überschrift,
-einen kurzen Text und drei Stichworte (`tags`).
+und einen kurzen Text.
 
 ## Kontaktdaten ändern
 
@@ -53,12 +53,11 @@ Die Bilder liegen in `src/assets/images/`:
 
 | Datei | Einsatz |
 |---|---|
-| `hero.jpg` | Titelbild (Hochformat) |
 | `portrait.jpg` | Über mich (Hochformat 4:5) |
-| `werkstatt.jpg` | Werkstatt (Querformat 4:3) |
-| `automobile.jpg` | Automobile (Querformat 4:3, Stockfoto Unsplash) |
-| `immobilien.jpg` | Immobilien (Querformat 4:3, Stockfoto Unsplash) |
-| `facility.jpg` | Facility Management (Querformat 4:3) |
+| `werkstatt.jpg` | Werkstatt (Querformat 3:2) |
+| `automobile.jpg` | Automobile (Querformat 3:2, Stockfoto Unsplash) |
+| `immobilien.jpg` | Immobilien (Querformat 3:2, Stockfoto Unsplash) |
+| `facility.jpg` | Facility Management (Querformat 3:2) |
 
 Zum Austauschen einfach eine neue Datei unter demselben Namen ablegen. Beim
 Build werden die Bilder automatisch verkleinert, in WebP umgewandelt und von
@@ -81,8 +80,8 @@ hochgeladen werden, etwa Netlify, Vercel oder GitHub Pages (Build-Befehl
 
 ```
 src/
-├── assets/images/        ← die 6 Bilder der Seite
-├── components/           ← Abschnitte (Hero, About, FieldSection, Contact, …)
+├── assets/images/        ← die 5 Bilder der Seite
+├── components/           ← Abschnitte (BusinessCard, About, Fields, Contact, …)
 ├── content/
 │   ├── de.json, en.json  ← alle Texte
 │   ├── images.ts         ← Zuordnung Bild → Abschnitt

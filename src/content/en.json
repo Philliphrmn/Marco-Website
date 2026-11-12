@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Marco Herrmann - Master Technician and Entrepreneur",
-    "description": "Marco Herrmann, master automotive technician and entrepreneur from Upper Franconia, Germany: workshop, automobiles, real estate and facility management."
+    "title": "Marco Herrmann",
+    "description": "Marco Herrmann from Upper Franconia, Germany: workshop, automobiles, real estate and facility management."
   },
   "a11y": {
     "skipToContent": "Skip to content",
@@ -15,17 +15,25 @@
     "about": "About",
     "contact": "Contact"
   },
-  "hero": {
-    "eyebrow": "Master technician · Entrepreneur",
-    "tagline": "Workshop, automobiles, real estate and facility management in Upper Franconia, Germany.",
-    "ctaContact": "Contact",
-    "ctaCall": "Call",
-    "imageAlt": "Mercedes-AMG GT Black Series in a dark studio setting"
+  "card": {
+    "hint": "Tap the card to turn it over",
+    "flip": "Turn card over",
+    "flipBack": "Back to the front",
+    "label": "Business card of Marco Herrmann",
+    "qrAlt": "QR code with the address of this website",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "save": "Save",
+    "more": "Scroll down",
+    "fieldsLabel": "Areas"
   },
   "about": {
     "heading": "About",
     "paragraphs": [
-      "Born in 1977, master automotive technician. At 21 I took over my family's business and over 25 years built it into a regional mobility and transport company, which I sold in 2023.",
+      "Born in 1977. At 21 I took over my family's automotive business and over 25 years built it into a regional mobility and transport company, which I sold in 2023.",
       "What has stayed is an interest in things with substance: vehicles, buildings, businesses. Today I work across four fields."
     ],
     "imageAlt": "Portrait of Marco Herrmann"
@@ -34,9 +42,8 @@
     {
       "id": "werkstatt",
       "label": "Workshop",
-      "heading": "Mercedes-Benz and sports cars in good hands.",
-      "text": "An independent workshop in Zedwitz: maintenance, repair and detailing with a focus on Mercedes-Benz and sports cars. Plus a towing service that is available around the clock.",
-      "tags": ["Maintenance & repair", "Detailing", "Towing 24/7"],
+      "heading": "Mercedes-Benz, sports cars and classics in good hands.",
+      "text": "An independent workshop in Zedwitz: maintenance, repair and detailing with a focus on Mercedes-Benz, sports cars and classic cars - right up to full restorations. Plus a towing service that is available around the clock.",
       "imageAlt": "Workshop hall with several Mercedes-AMG cars"
     },
     {
@@ -44,7 +51,6 @@
       "label": "Automobiles",
       "heading": "What is a profession in the workshop is a passion here.",
       "text": "A private collection of classic Mercedes-Benz, restorations down to the last detail and, now and then, the trade of special vehicles.",
-      "tags": ["Collection", "Restoration", "Trade"],
       "imageAlt": "Covered car in a dark hall"
     },
     {
@@ -52,7 +58,6 @@
       "label": "Real Estate",
       "heading": "Buying, renovating, building.",
       "text": "Commercial properties in Upper Franconia, plus apartments and houses in Austria and Portugal - partly for my own use, partly for rent.",
-      "tags": ["Germany", "Austria", "Portugal"],
       "imageAlt": "Neoclassical period facade in evening light"
     },
     {
@@ -60,7 +65,6 @@
       "label": "Facility",
       "heading": "Facility management, all year round.",
       "text": "Winter service, grounds maintenance and cleaning for commercial properties, residential complexes and property managers in Upper Franconia.",
-      "tags": ["Winter service", "Grounds", "Cleaning"],
       "imageAlt": "Wheel loader with snow plough on winter service"
     }
   ],
@@ -71,7 +75,8 @@
     "whatsapp": "WhatsApp",
     "email": "Email",
     "linkedin": "LinkedIn",
-    "saveContact": "Save contact"
+    "saveContact": "Save contact",
+    "directions": "Get directions"
   },
   "footer": {
     "impressum": "Legal Notice",

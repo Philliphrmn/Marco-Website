@@ -1,0 +1,23 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<!-- Monogramm "MH" im Kreis, in Tintenfarbe. -->
+<svg class={className} viewBox="0 0 48 48" fill="none" aria-hidden="true">
+  <circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="0.75" />
+  <text
+    x="24"
+    y="29.5"
+    text-anchor="middle"
+    fill="currentColor"
+    font-family="EB Garamond, Georgia, serif"
+    font-size="16"
+    letter-spacing="0.5"
+  >
+    MH
+  </text>
+</svg>

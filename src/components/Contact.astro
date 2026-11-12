@@ -1,7 +1,7 @@
 ---
-import { Mail, MessageCircle, Phone, UserPlus } from '@lucide/astro';
+import { Mail, MapPin, MessageCircle, Phone, UserPlus } from '@lucide/astro';
 import { getContent, type Lang } from '../i18n/utils';
-import { mailHref, siteConfig, telHref, whatsappHref } from '../content/site-config';
+import { mailHref, mapsHref, siteConfig, telHref, whatsappHref } from '../content/site-config';
 import LinkButton from './LinkButton.astro';
 import LinkedinIcon from './icons/LinkedinIcon.astro';
 
@@ -13,10 +13,10 @@ const t = getContent(Astro.props.lang).contact;
 const { adresse } = siteConfig;
 ---
 
-<section id="kontakt" class="border-t border-base-800 bg-base-900">
-  <div class="reveal mx-auto max-w-3xl px-5 py-24 text-center sm:px-8 md:py-32">
-    <h2 class="font-serif text-4xl text-ink sm:text-5xl">{t.heading}</h2>
-    <p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-ink-muted">{t.text}</p>
+<section id="kontakt">
+  <div class="reveal mx-auto max-w-3xl px-5 py-20 text-center sm:px-8 md:py-28">
+    <h2 class="font-serif text-4xl font-medium sm:text-5xl">{t.heading}</h2>
+    <p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-ink-soft">{t.text}</p>
 
     <div class="mt-10 flex flex-wrap justify-center gap-3">
       <LinkButton href={telHref(siteConfig.telefon)} variant="primary">
@@ -37,19 +37,22 @@ const { adresse } = siteConfig;
       </LinkButton>
     </div>
 
-    <a
-      href="/marco-herrmann.vcf"
-      download
-      class="mt-8 inline-flex items-center gap-2 text-sm text-ink-muted underline-offset-4 transition-colors hover:text-accent hover:underline"
-    >
-      <UserPlus class="h-4 w-4" aria-hidden="true" />
-      {t.saveContact}
-    </a>
-
-    <address class="mt-12 text-sm not-italic leading-relaxed text-ink-muted">
-      {siteConfig.name}<br />
-      {adresse.strasse}<br />
-      {`${adresse.plz} ${adresse.ort}`}
-    </address>
+    <div class="mt-12 flex flex-col items-center gap-6 text-sm text-ink-soft sm:flex-row sm:justify-center sm:gap-10">
+      <address class="not-italic leading-relaxed">
+        {siteConfig.name}<br />
+        {adresse.strasse}<br />
+        {`${adresse.plz} ${adresse.ort}`}
+      </address>
+      <div class="flex flex-col gap-2 sm:items-start">
+        <a href={mapsHref} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-ink hover:underline">
+          <MapPin class="h-4 w-4" aria-hidden="true" />
+          {t.directions}
+        </a>
+        <a href="/marco-herrmann.vcf" download class="inline-flex items-center gap-2 hover:text-ink hover:underline">
+          <UserPlus class="h-4 w-4" aria-hidden="true" />
+          {t.saveContact}
+        </a>
+      </div>
+    </div>
   </div>
 </section>

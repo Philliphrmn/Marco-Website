@@ -3,6 +3,7 @@ import { Menu, X } from '@lucide/astro';
 import { getContent, path, type Lang } from '../i18n/utils';
 import { siteConfig } from '../content/site-config';
 import LanguageSwitcher from './LanguageSwitcher.astro';
+import Monogram from './Monogram.astro';
 
 interface Props {
   lang: Lang;
@@ -22,12 +23,21 @@ const links = [
 ];
 ---
 
-<header class="sticky top-0 z-40 border-b border-base-800/80 bg-base-950/90 backdrop-blur">
-  <div class="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between gap-6 px-5 sm:px-8">
+<!--
+  Auf der Startseite ist der Header ausgeblendet, solange die Visitenkarte
+  im Bild ist (data-hidden, nur mit JavaScript), und gleitet beim Scrollen herein.
+-->
+<header
+  id="site-header"
+  data-hidden={isHome ? '' : undefined}
+  class="fixed inset-x-0 top-0 z-40 border-b border-line/70 bg-paper/90 backdrop-blur transition-transform duration-300 in-[.js]:data-hidden:-translate-y-full"
+>
+  <div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-5 sm:px-8">
     <a
       href={isHome ? '#top' : path(lang)}
-      class="font-serif text-sm uppercase tracking-[0.28em] text-ink transition-colors hover:text-accent"
+      class="flex items-center gap-3 font-serif text-lg text-ink transition-colors hover:text-ink-soft"
     >
+      <Monogram class="h-8 w-8" />
       {siteConfig.name}
     </a>
 
@@ -37,7 +47,7 @@ const links = [
           <a
             href={anchor(link.id)}
             data-nav-link={link.id}
-            class="text-sm text-ink-muted transition-colors hover:text-ink data-active:text-accent"
+            class="text-sm text-ink-soft decoration-1 underline-offset-8 transition-colors hover:text-ink data-active:text-ink data-active:underline"
           >
             {link.label}
           </a>
@@ -72,9 +82,9 @@ const links = [
   role="dialog"
   aria-modal="true"
   aria-label={content.a11y.mainNav}
-  class="fixed inset-0 z-50 hidden flex-col bg-base-950 lg:hidden"
+  class="fixed inset-0 z-50 hidden flex-col bg-paper lg:hidden"
 >
-  <div class="flex h-[4.5rem] items-center justify-end px-5 sm:px-8">
+  <div class="flex h-16 items-center justify-end px-5 sm:px-8">
     <button id="menu-close" type="button" class="inline-flex h-10 w-10 items-center justify-center text-ink">
       <X class="h-6 w-6" aria-hidden="true" />
       <span class="sr-only">{content.a11y.closeMenu}</span>
@@ -83,7 +93,7 @@ const links = [
   <nav aria-label={content.a11y.mainNav} class="flex flex-1 flex-col items-center justify-center gap-7 pb-16">
     {
       links.map((link) => (
-        <a href={anchor(link.id)} class="font-serif text-2xl text-ink transition-colors hover:text-accent">
+        <a href={anchor(link.id)} class="font-serif text-3xl text-ink transition-colors hover:text-ink-soft">
           {link.label}
         </a>
       ))
@@ -119,6 +129,20 @@ const links = [
   });
   // Ein Klick auf einen Menüpunkt schließt das Menü, der Browser springt dann zur Sektion.
   menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+
+  // Startseite: Header erst zeigen, wenn die Visitenkarte größtenteils verlassen ist.
+  const header = document.getElementById('site-header')!;
+  const hero = document.getElementById('top');
+  if (hero && header.hasAttribute('data-hidden') && 'IntersectionObserver' in window) {
+    new IntersectionObserver(
+      ([entry]) => {
+        const hidden = entry.intersectionRatio >= 0.5;
+        header.toggleAttribute('data-hidden', hidden);
+        header.inert = hidden;
+      },
+      { threshold: 0.5 },
+    ).observe(hero);
+  }
 
   // Aktive Sektion in der Desktop-Navigation hervorheben.
   const navLinks = document.querySelectorAll<HTMLElement>('[data-nav-link]');

@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets';
+import { getContent, type Lang } from '../i18n/utils';
+import { sectionImages } from '../content/images';
+
+interface Props {
+  lang: Lang;
+}
+
+const { sections } = getContent(Astro.props.lang);
+
+// Hintergründe im Wechsel mit Über mich (weiß) davor und Kontakt (beige) danach:
+// Grau, Weiß, Beige, Weiß.
+const tones = ['bg-stone', 'bg-white', 'bg-paper', 'bg-white'];
+---
+
+<!-- Die vier Tätigkeitsfelder untereinander, Bild und Text abwechselnd links/rechts. -->
+{
+  sections.map((field, i) => (
+    <section id={field.id} class={tones[i % tones.length]}>
+      <div class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 sm:px-8 md:grid-cols-2 md:gap-16 md:py-28">
+        <Image
+          src={sectionImages[field.id]}
+          alt={field.imageAlt}
+          widths={[480, 800, 1200]}
+          sizes="(min-width: 768px) 50vw, 100vw"
+          class:list={['reveal aspect-[3/2] w-full rounded-md object-cover shadow-card', i % 2 === 1 && 'md:order-2']}
+        />
+        <div class="reveal">
+          <p class="text-xs tracking-[0.22em] text-ink-faint uppercase">
+            {String(i + 1).padStart(2, '0')} <span class="mx-1.5" aria-hidden="true">—</span> {field.label}
+          </p>
+          <h2 class="mt-4 font-serif text-3xl leading-tight font-medium sm:text-4xl">{field.heading}</h2>
+          <p class="mt-5 text-lg leading-relaxed text-ink-soft">{field.text}</p>
+        </div>
+      </div>
+    </section>
+  ))
+}

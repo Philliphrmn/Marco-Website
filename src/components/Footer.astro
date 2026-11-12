@@ -11,9 +11,9 @@ const content = getContent(lang);
 const year = new Date().getFullYear();
 ---
 
-<footer class="border-t border-base-800">
+<footer class="border-t border-line">
   <div
-    class="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 text-xs text-ink-muted sm:flex-row sm:items-center sm:justify-between sm:px-8"
+    class="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 text-xs text-ink-faint sm:flex-row sm:items-center sm:justify-between sm:px-8"
   >
     <p>&copy; {year} {siteConfig.name}</p>
     <nav aria-label={content.a11y.legalNav} class="flex gap-6">

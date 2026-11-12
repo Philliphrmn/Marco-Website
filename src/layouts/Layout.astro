@@ -1,6 +1,7 @@
 ---
-import '@fontsource/playfair-display/latin-400.css';
-import '@fontsource/playfair-display/latin-500.css';
+import '@fontsource/eb-garamond/latin-400.css';
+import '@fontsource/eb-garamond/latin-500.css';
+import '@fontsource/eb-garamond/latin-400-italic.css';
 import '@fontsource/inter/latin-400.css';
 import '@fontsource/inter/latin-500.css';
 import '../styles/global.css';
@@ -25,7 +26,7 @@ const content = getContent(lang);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#14120f" />
+    <meta name="theme-color" content="#f4f1ea" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -37,11 +38,12 @@ const content = getContent(lang);
     </script>
   </head>
   <body class="font-sans antialiased">
-    <a href="#main" class="skip-link rounded-full bg-accent px-4 py-2 text-sm font-medium text-base-950">
+    <a href="#main" class="skip-link rounded-full bg-ink px-4 py-2 text-sm font-medium text-paper">
       {content.a11y.skipToContent}
     </a>
     <Header lang={lang} slug={slug} />
-    <main id="main">
+    <!-- Der Header ist fixiert; Unterseiten brauchen oben Platz dafür, die Startseite nicht. -->
+    <main id="main" class:list={[slug !== '' && 'pt-16']}>
       <slot />
     </main>
     <Footer lang={lang} />

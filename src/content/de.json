@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Marco Herrmann - Kfz-Meister und Unternehmer",
-    "description": "Marco Herrmann, Kfz-Meister und Unternehmer aus Oberfranken: Werkstatt, Automobile, Immobilien und Facility Management."
+    "title": "Marco Herrmann",
+    "description": "Marco Herrmann aus Oberfranken: Werkstatt, Automobile, Immobilien und Facility Management."
   },
   "a11y": {
     "skipToContent": "Zum Inhalt springen",
@@ -15,17 +15,25 @@
     "about": "Über mich",
     "contact": "Kontakt"
   },
-  "hero": {
-    "eyebrow": "Kfz-Meister · Unternehmer",
-    "tagline": "Werkstatt, Automobile, Immobilien und Facility Management in Oberfranken.",
-    "ctaContact": "Kontakt",
-    "ctaCall": "Anrufen",
-    "imageAlt": "Mercedes-AMG GT Black Series in dunkler Studioumgebung"
+  "card": {
+    "hint": "Zum Umdrehen auf die Karte tippen",
+    "flip": "Karte umdrehen",
+    "flipBack": "Zurück zur Vorderseite",
+    "label": "Visitenkarte von Marco Herrmann",
+    "qrAlt": "QR-Code mit der Adresse dieser Website",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "address": "Adresse",
+    "call": "Anrufen",
+    "whatsapp": "WhatsApp",
+    "save": "Speichern",
+    "more": "Weiter nach unten",
+    "fieldsLabel": "Bereiche"
   },
   "about": {
     "heading": "Über mich",
     "paragraphs": [
-      "Jahrgang 1977, Kfz-Meister. Mit 21 habe ich den elterlichen Betrieb übernommen und daraus in 25 Jahren ein regionales Mobilitäts- und Transportunternehmen aufgebaut, das ich 2023 verkauft habe.",
+      "Jahrgang 1977. Mit 21 habe ich den elterlichen Kfz-Betrieb übernommen und daraus in 25 Jahren ein regionales Mobilitäts- und Transportunternehmen aufgebaut, das ich 2023 verkauft habe.",
       "Geblieben ist das Interesse an Dingen mit Substanz: Fahrzeuge, Gebäude, Betriebe. Heute arbeite ich in vier Feldern."
     ],
     "imageAlt": "Portrait von Marco Herrmann"
@@ -34,9 +42,8 @@
     {
       "id": "werkstatt",
       "label": "Werkstatt",
-      "heading": "Mercedes-Benz und Sportwagen in guten Händen.",
-      "text": "Ein freier Kfz-Betrieb in Zedwitz: Wartung, Reparatur und Pflege mit Schwerpunkt Mercedes-Benz und Sportwagen. Dazu ein Abschleppdienst, der rund um die Uhr erreichbar ist.",
-      "tags": ["Wartung & Reparatur", "Fahrzeugpflege", "Abschleppdienst 24/7"],
+      "heading": "Mercedes-Benz, Sportwagen und Oldtimer in guten Händen.",
+      "text": "Ein freier Kfz-Betrieb in Zedwitz: Wartung, Reparatur und Pflege mit Schwerpunkt Mercedes-Benz, Sportwagen und Oldtimer - bis hin zur kompletten Restaurierung. Dazu ein Abschleppdienst, der rund um die Uhr erreichbar ist.",
       "imageAlt": "Werkstatthalle mit mehreren Mercedes-AMG"
     },
     {
@@ -44,7 +51,6 @@
       "label": "Automobile",
       "heading": "Was in der Werkstatt Beruf ist, ist hier Leidenschaft.",
       "text": "Eine eigene Sammlung klassischer Mercedes-Benz, Restaurierungen bis ins Detail und gelegentlich der Handel mit besonderen Fahrzeugen.",
-      "tags": ["Sammlung", "Restaurierung", "Handel"],
       "imageAlt": "Abgedecktes Fahrzeug in einer dunklen Halle"
     },
     {
@@ -52,7 +58,6 @@
       "label": "Immobilien",
       "heading": "Gebäude kaufen, sanieren, bauen.",
       "text": "Gewerbeobjekte in Oberfranken, dazu Wohnungen und Häuser in Österreich und Portugal - teils zur eigenen Nutzung, teils zur Vermietung.",
-      "tags": ["Deutschland", "Österreich", "Portugal"],
       "imageAlt": "Klassizistische Altbaufassade im Abendlicht"
     },
     {
@@ -60,7 +65,6 @@
       "label": "Facility",
       "heading": "Facility Management, das ganze Jahr.",
       "text": "Winterdienst, Grünflächenpflege und Reinigung für Gewerbeobjekte, Wohnanlagen und Hausverwaltungen in Oberfranken.",
-      "tags": ["Winterdienst", "Grünpflege", "Reinigung"],
       "imageAlt": "Radlader mit Schneeschild im Winterdienst"
     }
   ],
@@ -71,7 +75,8 @@
     "whatsapp": "WhatsApp",
     "email": "E-Mail",
     "linkedin": "LinkedIn",
-    "saveContact": "Kontakt speichern"
+    "saveContact": "Kontakt speichern",
+    "directions": "Route planen"
   },
   "footer": {
     "impressum": "Impressum",
