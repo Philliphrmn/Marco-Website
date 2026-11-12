@@ -26,13 +26,14 @@ const qrSvg = await QRCode.toString(siteUrl, {
 <!--
   Erster Bildschirm: nur die Visitenkarte, so groß wie möglich.
   Vorderseite = Logo, Name, QR-Code. Rückseite = Kontakt und Sprunglinks
-  zu den vier Bereichen. Auf dem Handy hochkant, ab sm quer im echten
-  Format 85 × 55 mm. Alle Größen auf der Karte skalieren mit der
-  Kartenbreite (cqw).
+  zu den vier Bereichen.
+  Immer im Querformat 85 × 55 mm wie die gedruckte Karte. Alle Maße auf
+  der Karte sind in cqw (Prozent der Kartenbreite), damit sie auf jedem
+  Bildschirm exakt gleich aussieht, nur größer oder kleiner.
 -->
 <section id="top" class="relative flex min-h-svh flex-col items-center justify-center gap-6 px-5 py-10">
   <div class="card-scene">
-    <div id="card" class="card relative aspect-[55/85] sm:aspect-[85/55]" role="group" aria-label={t.label}>
+    <div id="card" class="card relative aspect-[85/55]" role="group" aria-label={t.label}>
       <!-- Vorderseite -->
       <div class="card-face card-front" data-face="front" role="button" tabindex="0" aria-label={t.flip}>
         <Monogram class="front-logo" />
@@ -46,7 +47,7 @@ const qrSvg = await QRCode.toString(siteUrl, {
           <Monogram class="back-logo shrink-0" />
           <p class="back-name font-serif font-medium">{siteConfig.name}</p>
           <button type="button" data-flip class="back-flip" aria-label={t.flipBack}>
-            <RotateCcw class="h-4 w-4" aria-hidden="true" />
+            <RotateCcw class="back-flip-icon" aria-hidden="true" />
           </button>
         </div>
 
@@ -58,7 +59,7 @@ const qrSvg = await QRCode.toString(siteUrl, {
             </div>
             <div>
               <dt class="card-label">{t.email}</dt>
-              <dd class="break-all sm:break-normal"><a href={mailHref(siteConfig.email)} class="hover:underline">{siteConfig.email}</a></dd>
+              <dd class="whitespace-nowrap"><a href={mailHref(siteConfig.email)} class="hover:underline">{siteConfig.email}</a></dd>
             </div>
             <div>
               <dt class="card-label">{t.address}</dt>
@@ -112,13 +113,8 @@ const qrSvg = await QRCode.toString(siteUrl, {
 <style>
   /* Kartengröße: so groß wie der Bildschirm erlaubt, Platz für Hinweis darunter. */
   .card-scene {
-    width: min(90vw, calc((100svh - 7rem) * 55 / 85));
+    width: min(92vw, 54rem, calc((100svh - 8rem) * 85 / 55));
     perspective: 2000px;
-  }
-  @media (min-width: 40rem) {
-    .card-scene {
-      width: min(88vw, 54rem, calc((100svh - 8rem) * 85 / 55));
-    }
   }
 
   .card {
@@ -134,7 +130,7 @@ const qrSvg = await QRCode.toString(siteUrl, {
     inset: 0;
     display: flex;
     flex-direction: column;
-    padding: 7cqw;
+    padding: 5.5cqw 6.5cqw;
     border-radius: 1.6cqw;
     /* Fast reines Weiß mit Haarlinie, damit sich die Karte vom beigen Grund abhebt. */
     background: linear-gradient(160deg, #ffffff, #fefdfb);
@@ -150,24 +146,26 @@ const qrSvg = await QRCode.toString(siteUrl, {
     transform: rotateY(180deg);
   }
 
-  /* --- Vorderseite (hochkant): Logo oben, Name, QR groß unten --- */
+  /* --- Vorderseite: Logo oben links, Name zweizeilig unten links, QR unten rechts --- */
   .card-front {
     cursor: pointer;
   }
   :global(.front-logo) {
-    width: 22cqw;
-    height: 22cqw;
+    width: 13cqw;
+    height: 13cqw;
   }
   .front-name {
+    max-width: 60%;
     margin-top: auto;
-    font-size: 17cqw;
+    font-size: 10.5cqw;
     line-height: 0.95;
     letter-spacing: -0.01em;
   }
   .front-qr {
-    align-self: flex-end;
-    width: 38cqw;
-    margin-top: 7cqw;
+    position: absolute;
+    right: 6.5cqw;
+    bottom: 5.5cqw;
+    width: 21cqw;
   }
   .front-qr :global(svg) {
     display: block;
@@ -175,25 +173,25 @@ const qrSvg = await QRCode.toString(siteUrl, {
     height: auto;
   }
 
-  /* --- Rückseite (hochkant) --- */
+  /* --- Rückseite: Kopf, darunter Kontakt links und Bereiche rechts, unten Buttons --- */
   .back-head {
     display: flex;
     align-items: center;
-    gap: 3.5cqw;
-    padding-bottom: 4.5cqw;
+    gap: 2.5cqw;
+    padding-bottom: 3cqw;
     border-bottom: 1px solid var(--color-line);
   }
   :global(.back-logo) {
-    width: 11cqw;
-    height: 11cqw;
+    width: 7cqw;
+    height: 7cqw;
   }
   .back-name {
-    font-size: 7cqw;
+    font-size: 4cqw;
     line-height: 1.1;
   }
   .back-flip {
-    margin: -0.5rem -0.5rem -0.5rem auto;
-    padding: 0.5rem;
+    margin: -1cqw -1cqw -1cqw auto;
+    padding: 1cqw;
     color: var(--color-ink-faint);
     border-radius: 999px;
     transition: color 0.2s;
@@ -201,140 +199,90 @@ const qrSvg = await QRCode.toString(siteUrl, {
   .back-flip:hover {
     color: var(--color-ink);
   }
-  .back-body {
-    display: flex;
-    flex-direction: column;
-    gap: 6cqw;
-    margin-top: 6cqw;
+  .back-flip :global(.back-flip-icon) {
+    width: 2.4cqw;
+    height: 2.4cqw;
   }
+  .back-body {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 5cqw;
+    margin-top: 4cqw;
+  }
+  /* Kontaktdaten über die volle Höhe der Bereiche-Spalte verteilen,
+     damit beide Spalten oben und unten bündig abschließen. */
   .back-details {
     display: flex;
     flex-direction: column;
-    gap: 3.5cqw;
-    font-size: max(0.875rem, 4.3cqw);
+    justify-content: space-between;
+    gap: 2cqw;
+    font-size: 2.3cqw;
   }
   .card-label {
-    margin-bottom: 0.15rem;
-    font-size: max(0.625rem, 2.9cqw);
+    margin-bottom: 0.3cqw;
+    font-size: 1.45cqw;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--color-ink-faint);
-  }
-  .back-fields {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 4cqw;
   }
   .back-field-link {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 0.25rem;
-    padding: 1.6cqw 0;
+    gap: 1cqw;
+    /* Innenabstand für die Hover-Fläche, per negativem Rand ausgeglichen,
+       damit Text und Linie bündig mit dem Rest der Karte bleiben. */
+    margin-inline: -1cqw;
+    padding: 0.9cqw 1cqw;
     border-bottom: 1px solid var(--color-line);
+    border-radius: 0.5cqw 0.5cqw 0 0;
     font-family: var(--font-serif);
-    font-size: max(1rem, 5cqw);
-    transition: color 0.2s;
+    font-size: 2.8cqw;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
   }
-  .back-field-link:hover {
-    color: var(--color-ink-soft);
+  .back-field-link:hover,
+  .back-field-link:focus-visible {
+    background-color: rgb(30 42 68 / 0.06);
   }
   .back-field-link :global(.back-field-icon) {
     width: 1em;
     height: 1em;
     color: var(--color-ink-faint);
+    transition:
+      transform 0.2s,
+      color 0.2s;
+  }
+  .back-field-link:hover :global(.back-field-icon),
+  .back-field-link:focus-visible :global(.back-field-icon) {
+    color: var(--color-ink);
+    transform: translate(0.25cqw, 0.25cqw);
   }
   .back-actions {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
+    gap: 1cqw;
     margin-top: auto;
-    padding-top: 4cqw;
+    padding-top: 3cqw;
   }
   .card-action {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 0.4rem;
-    padding: 0.6rem 0;
-    border-radius: 0.375rem;
+    justify-content: center;
+    gap: 1cqw;
+    padding: 1.3cqw 0;
+    border-radius: 0.8cqw;
     background-color: rgb(30 42 68 / 0.05);
-    font-size: max(0.75rem, 3.6cqw);
+    font-size: 2cqw;
     transition: background-color 0.2s;
   }
   .card-action:hover {
     background-color: rgb(30 42 68 / 0.1);
   }
   .card-action :global(.card-action-icon) {
-    width: max(1rem, 5cqw);
-    height: max(1rem, 5cqw);
-  }
-
-  /* --- Querformat ab sm --- */
-  @media (min-width: 40rem) {
-    .card-face {
-      padding: 5.5cqw 6.5cqw;
-    }
-    /* Vorderseite: Logo oben links, Name groß zweizeilig unten links, QR unten rechts */
-    :global(.front-logo) {
-      width: 13cqw;
-      height: 13cqw;
-    }
-    .front-name {
-      max-width: 60%;
-      font-size: 10.5cqw;
-    }
-    .front-qr {
-      position: absolute;
-      right: 6.5cqw;
-      bottom: 5.5cqw;
-      width: 21cqw;
-      margin: 0;
-    }
-    /* Rückseite: Kontakt links, Bereiche rechts */
-    .back-head {
-      gap: 2.5cqw;
-      padding-bottom: 3cqw;
-    }
-    :global(.back-logo) {
-      width: 7cqw;
-      height: 7cqw;
-    }
-    .back-name {
-      font-size: 4cqw;
-    }
-    .back-body {
-      display: grid;
-      grid-template-columns: 1.25fr 1fr;
-      gap: 6cqw;
-      margin-top: 4cqw;
-    }
-    .back-details {
-      gap: 2.2cqw;
-      font-size: max(0.875rem, 2.05cqw);
-    }
-    .card-label {
-      font-size: max(0.625rem, 1.4cqw);
-    }
-    .back-fields {
-      grid-template-columns: 1fr;
-    }
-    .back-field-link {
-      padding: 0.9cqw 0;
-      font-size: max(1rem, 2.7cqw);
-    }
-    .back-actions {
-      padding-top: 3cqw;
-    }
-    .card-action {
-      flex-direction: row;
-      justify-content: center;
-      font-size: max(0.75rem, 1.8cqw);
-    }
-    .card-action :global(.card-action-icon) {
-      width: max(1rem, 2.3cqw);
-      height: max(1rem, 2.3cqw);
-    }
+    width: 2.4cqw;
+    height: 2.4cqw;
   }
 
   @media (prefers-reduced-motion: reduce) {
